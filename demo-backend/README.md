@@ -4,8 +4,8 @@ Express & ES6 REST API created from Boilerplate https://github.com/developit/exp
 
 Prerequisites
 ---------------
-* Node v8.11.2 [here](https://nodejs.org/es/download/)
-* Mongo v3.2.20 [here](https://docs.mongodb.com/manual/installation/)
+* Node v8.11.2 (https://nodejs.org/es/download/)
+* Mongo v3.2.20 (https://docs.mongodb.com/manual/installation/)
 
 Getting Started
 ---------------
