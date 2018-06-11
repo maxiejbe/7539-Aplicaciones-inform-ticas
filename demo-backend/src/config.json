@@ -1,6 +1,0 @@
-{
-	"port": 8080,
-	"dbName": "demo-db",
-	"bodyLimit": "100kb",
-	"corsHeaders": ["Link"]
-}
