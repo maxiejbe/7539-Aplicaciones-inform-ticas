@@ -17,11 +17,43 @@ describe('Auth', () => {
     })
   })
 
-
   describe('/POST register', () => {
 
     it('it should not register user without username', done => {
       let user = {
+          password: 'password',
+          role: 'Consumer'
+        }
+      chai.request(server)
+      .post('/api/auth/register')
+      .send(user)
+      .end((err, res) => {
+        res.should.have.status(400)
+        res.body.should.have.property('message')
+        res.body.message.should.be.eql('Missing required fields')
+        done()
+      })
+    })
+
+    it('it should not register user without password', done => {
+      let user = {
+          username: 'username',
+          role: 'Consumer'
+        }
+      chai.request(server)
+      .post('/api/auth/register')
+      .send(user)
+      .end((err, res) => {
+        res.should.have.status(400)
+        res.body.should.have.property('message')
+        res.body.message.should.be.eql('Missing required fields')
+        done()
+      })
+    })
+
+    it('it should not register user without role', done => {
+      let user = {
+          username: 'username',
           password: 'password'
         }
       chai.request(server)
@@ -30,20 +62,7 @@ describe('Auth', () => {
       .end((err, res) => {
         res.should.have.status(400)
         res.body.should.have.property('message')
-        done()
-      })
-    })
-
-    it('it should not register user without password', done => {
-      let user = {
-          username: 'username'
-        }
-      chai.request(server)
-      .post('/api/auth/register')
-      .send(user)
-      .end((err, res) => {
-        res.should.have.status(400)
-        res.body.should.have.property('message')
+        res.body.message.should.be.eql('Missing required fields')
         done()
       })
     })
@@ -51,7 +70,8 @@ describe('Auth', () => {
     it('it should not register user with too short username', done => {
       let user = {
         username: 'us',
-        password: 'password'
+        password: 'password',
+        role: 'Consumer'
       }
       chai.request(server)
       .post('/api/auth/register')
@@ -59,6 +79,7 @@ describe('Auth', () => {
       .end((err, res) => {
         res.should.have.status(400)
         res.body.should.have.property('message')
+        res.body.message.should.contains('Username must be longer than 7 character')
         done()
       })
     })
@@ -66,7 +87,8 @@ describe('Auth', () => {
     it('it should not register user with too short password', done => {
       let user = {
         username: 'username',
-        password: 'mar'
+        password: 'mar',
+        role: 'Consumer'
       }
       chai.request(server)
       .post('/api/auth/register')
@@ -74,9 +96,45 @@ describe('Auth', () => {
       .end((err, res) => {
         res.should.have.status(400)
         res.body.should.have.property('message')
+        res.body.message.should.contains('Password must be longer than 7 character')
         done()
       })
     })
+    
+    it('it should not register user if role is invalid', done => {
+      let user = {
+        username: 'username',
+        password: 'password',
+        role: 'InvalidRole',
+      }
+      chai.request(server)
+      .post('/api/auth/register')
+      .send(user)
+      .end((err, res) => {
+        res.should.have.status(400)
+        res.body.should.have.property('message')
+        res.body.message.should.be.eql('Role is not valid')
+        done()
+      })
+    })
+
+    it('it should register user with supplied data', done => {
+      let user = {
+        username: 'username',
+        password: 'password',
+        role: 'Consumer',
+      }
+      chai.request(server)
+      .post('/api/auth/register')
+      .send(user)
+      .end((err, res) => {
+        res.should.have.status(200)
+        res.body.username.should.be.eql(user.username);
+        res.body.role.should.be.eql(user.role);
+        done()
+      })
+    })
+    
   })
 
   describe('/POST login', () => {
@@ -117,6 +175,7 @@ describe('Auth', () => {
       .end((err, res) => {
         res.should.have.status(400)
         res.body.should.have.property('message')
+        res.body.message.should.be.eql('Bad password')
         done()
       })
     })

@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt-nodejs';
+import roles from './roles';
 import config from '../config'
 
 const UserSchema = new mongoose.Schema({
@@ -7,7 +8,7 @@ const UserSchema = new mongoose.Schema({
   password: { type: String, minlength: [8, 'Password must be longer than 7 character']},
   role: {
     type:     String,
-    enum:     [config.consumerRole, config.providerRole],
+    enum:     roles,
     default:  config.consumerRole
   }
 })

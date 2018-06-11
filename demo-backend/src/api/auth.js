@@ -2,6 +2,7 @@ import { Router } from 'express'
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt-nodejs'
 import User from '../models/user'
+import roles from '../models/roles'
 import passport from 'passport'
 import config from '../config'
 
@@ -30,8 +31,12 @@ auth.post('/login', (req, res) => {
 })
 
 auth.post('/register', (req, res) => {
+	
 	if (!req.body.username || !req.body.password || !req.body.role) {
 		return res.status(400).json({ message: 'Missing required fields' })
+	}
+	if (!roles.includes(req.body.role)){
+		return res.status(400).json({ message: 'Role is not valid' });
 	}
 
   findUser(req.body.username)
