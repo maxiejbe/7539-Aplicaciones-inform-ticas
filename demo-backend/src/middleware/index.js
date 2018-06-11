@@ -1,9 +1,10 @@
 import { Router } from 'express';
+import users from './users';
 
 export default ({ config, db }) => {
 	let routes = Router();
-
-	// add middleware here
-
+		
+	users(routes);
+	
 	return routes;
 }
