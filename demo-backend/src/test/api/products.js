@@ -46,8 +46,7 @@ describe('Products', () => {
       Product.create(product1),
       Product.create(product2),
       User.create(consumerUser)
-    ]).then((res) => {
-      console.log(res);
+    ]).then(() => {
       done()
     }).catch(err => {
       done()
