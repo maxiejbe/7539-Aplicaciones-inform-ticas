@@ -10,7 +10,14 @@ const config = {
   bodyLimit: "100kb",
   corsHeaders: ["Link"],
   consumerRole: 'Consumer',
-  providerRole: 'Provider'
+  providerRole: 'Provider',
+
+  mockConsumerToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ8',
+  mockConsumerId: '5aa981af1d5b712a51cfbdf6',
+  mockConsumerUsername: 'consumer-username',
+  mockProviderToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9',
+  mockProviderId: '5aa981af1d5b712a51cfbdf7',
+  mockProviderUsername: 'provider-username',
 }
 
 

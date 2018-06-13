@@ -6,7 +6,7 @@ import isAuthenticated from './common/isAuthenticated';
 export default ({ config, db }) => {
 	let routes = Router();
 	
-	routes.all('*', isAuthenticated);
+	routes.all('*', isAuthenticated());
 
 	routes.use(users);
 	
