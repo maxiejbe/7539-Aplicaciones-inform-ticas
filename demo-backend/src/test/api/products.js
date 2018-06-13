@@ -29,7 +29,7 @@ describe('Products', () => {
   beforeEach((done) => {
 
     let category1 = {_id: '5aa981af1d5b712a51cfbdf6', name: 'Category1' };
-    let category2 = {_id: '5aa981af1d5b712a51cfbdf6', name: 'Category2' };
+    let category2 = {_id: '5aa981af1d5b712a51cfbdf7', name: 'Category2' };
 
     let product1 = {name: 'Product1', category: category1._id};
     let product2 = {name: 'Product2', category: category2._id};
