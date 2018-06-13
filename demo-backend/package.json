@@ -41,11 +41,13 @@
     "express": "^4.13.3",
     "jsonwebtoken": "^7.3.0",
     "mongoose": "^4.9.4",
+    "mongoose-data-seed": "^1.0.6",
     "morgan": "^1.8.0",
     "passport": "^0.3.2",
     "passport-jwt": "^2.2.1",
     "resource-router-middleware": "^0.6.0",
-    "sinon": "^6.0.0"
+    "sinon": "^6.0.0",
+    "string-format": "^2.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
