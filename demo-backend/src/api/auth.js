@@ -17,7 +17,7 @@ auth.post('/login', (req, res) => {
 		if(!user) return res.status(400).json({ message: 'No user' })
 		bcrypt.compare(req.body.password, user.password, (err, result) => {
 			if(result) {
-				const token = jwt.sign({id: req.body.username, role: user.role},  config.jwtSecret)
+				const token = jwt.sign({id: user.id, username: req.body.username, role: user.role},  config.jwtSecret)
 				return res.status(200).json({ message: 'ok', token })
 			}
 			else {

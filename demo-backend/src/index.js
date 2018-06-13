@@ -53,7 +53,7 @@ passport.deserializeUser(function(username, done) {
 })
 
 passport.use('jwt', new JwtStrategy(jwtOptions, (jwt_payload, done) => {
-	User.findOne({ username: jwt_payload.id })
+	User.findOne({ username: jwt_payload.username })
 	.then(user => {
 		if(user) return done(null, user)
 		else return done(null, false)
