@@ -8,7 +8,7 @@
     "build": "babel src -s -D -d dist",
     "start": "node dist",
     "prestart": "npm run -s build",
-    "test": "set NODE_ENV=test&& mocha src --recursive --timeout 10000 --compilers js:babel-register --require babel-polyfill"
+    "test": "NODE_ENV=test mocha src --recursive --timeout 10000 --compilers js:babel-register --require babel-polyfill"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
