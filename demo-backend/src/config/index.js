@@ -12,6 +12,7 @@ const config = {
   consumerRole: 'Consumer',
   providerRole: 'Provider',
 
+  //TODO: Move to test env config
   mockConsumerToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ8',
   mockConsumerId: '5aa981af1d5b712a51cfbdf6',
   mockConsumerUsername: 'consumer-username',
