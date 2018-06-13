@@ -1,7 +1,7 @@
 import mongooseLib from 'mongoose';
 
 import Users from "./seeders/users.seeder";
-//import Categories from "./seeders/categories.seeder";
+import Categories from "./seeders/categories.seeder";
 //import Products from "./seeders/products.seeder";
   
 
@@ -20,6 +20,6 @@ export const mongoURL = process.env.MONGO_URL;
 */
 export const seedersList = {
   Users,
-  //Categories,
+  Categories,
   //Products
 };
