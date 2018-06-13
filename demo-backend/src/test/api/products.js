@@ -16,6 +16,9 @@ describe('Products', () => {
 
   let sandbox;
 
+  let category1 = {_id: '5aa981af1d5b712a51cfbdf6', name: 'Category1' };
+  let category2 = {_id: '5aa981af1d5b712a51cfbdf7', name: 'Category2' };
+
   before(function(done) {
     sandbox = sinon.createSandbox();
     jwtVerifyMock(sandbox);
@@ -28,9 +31,6 @@ describe('Products', () => {
 
   beforeEach((done) => {
 
-    let category1 = {_id: '5aa981af1d5b712a51cfbdf6', name: 'Category1' };
-    let category2 = {_id: '5aa981af1d5b712a51cfbdf7', name: 'Category2' };
-
     let product1 = {name: 'Product1', category: category1._id};
     let product2 = {name: 'Product2', category: category2._id};
 
@@ -41,10 +41,8 @@ describe('Products', () => {
     }
 
     Promise.all([
-      Category.create(category1),
-      Category.create(category2),
-      Product.create(product1),
-      Product.create(product2),
+      Category.create([category1, category2]),
+      Product.create([product1, product2]),
       User.create(consumerUser)
     ]).then(() => {
       done()
@@ -73,6 +71,17 @@ describe('Products', () => {
       .end((err, res) => {
         res.should.have.status(200)
         res.body.should.have.length(2);
+        done()
+      })
+    })
+
+    it('it should return products by category', done => {
+      chai.request(server)
+      .get('/api/products?category=' + category1._id)
+      .set('authorization', config.mockConsumerToken)
+      .end((err, res) => {
+        res.should.have.status(200)
+        res.body.should.have.length(1);
         done()
       })
     })
