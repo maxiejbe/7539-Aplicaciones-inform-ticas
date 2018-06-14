@@ -27,8 +27,14 @@ describe('Categories', () => {
 
   beforeEach((done) => {
 
-    let category1 = {_id: '5aa981af1d5b712a51cfbdf6', name: 'Category1' };
-    let category2 = {_id: '5aa981af1d5b712a51cfbdf7', name: 'Category2' };
+    let category1 = {
+      _id: '5aa981af1d5b712a51cfbdf6',
+      name: 'Category1'
+    };
+    let category2 = {
+      _id: '5aa981af1d5b712a51cfbdf7',
+      name: 'Category2'
+    };
 
     let consumerUser = {
       id: config.mockConsumerId,
@@ -61,22 +67,22 @@ describe('Categories', () => {
   describe('/GET categories', () => {
     it('it should return all categories', done => {
       chai.request(server)
-      .get('/api/categories')
-      .set('authorization', config.mockConsumerToken)
-      .end((err, res) => {
-        res.should.have.status(200)
-        res.body.should.have.length(2);
-        done()
-      })
+        .get('/api/categories')
+        .set('authorization', config.mockConsumerToken)
+        .end((err, res) => {
+          res.should.have.status(200)
+          res.body.should.have.length(2);
+          done()
+        })
     })
 
     it('it should return unauthorized', done => {
       chai.request(server)
-      .get('/api/categories')
-      .end((err, res) => {
-        res.should.have.status(401)
-        done()
-      })
+        .get('/api/categories')
+        .end((err, res) => {
+          res.should.have.status(401)
+          done()
+        })
     })
 
   })

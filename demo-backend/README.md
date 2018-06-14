@@ -30,6 +30,7 @@ Configuration
 Create `.env` file to store env variables:
 
 ```
+TEST_MONGO_URL=<YOUR_MONGO_TEST_URL>
 MONGO_URL=<YOUR_MONGO_URL>
 PORT=<YOUR_PORT>
 JWT_SECRET=<YOUR_JWT_SECRET>

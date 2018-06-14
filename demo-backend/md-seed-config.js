@@ -3,7 +3,7 @@ import mongooseLib from 'mongoose';
 import Users from "./seeders/users.seeder";
 import Categories from "./seeders/categories.seeder";
 import Products from "./seeders/products.seeder";
-  
+
 
 mongooseLib.Promise = global.Promise;
 
