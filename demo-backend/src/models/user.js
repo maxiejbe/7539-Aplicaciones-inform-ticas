@@ -3,6 +3,19 @@ import bcrypt from 'bcrypt-nodejs';
 import roles from './roles';
 import config from '../config'
 
+var UserProductSchema = new mongoose.Schema({
+  product: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref:  'Product'
+  },
+  quantity: {
+    type:    Number,
+    default: 0
+  }
+}, {
+  noId: true
+});
+
 const UserSchema = new mongoose.Schema({
   username: {
     type:      String,
@@ -20,7 +33,8 @@ const UserSchema = new mongoose.Schema({
   point: {
     type:  [Number],
     index: '2d'
-  }
+  },
+  products: [UserProductSchema]
 })
 
 
@@ -29,8 +43,8 @@ UserSchema.methods.toJSON = function() {
     _id:      this._id,
     username: this.username,
     role:     this.role,
-    point:    this.point
-
+    point:    this.point,
+    products: this.products,
   };
 };
 
