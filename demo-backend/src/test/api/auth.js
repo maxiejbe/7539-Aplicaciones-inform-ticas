@@ -22,7 +22,7 @@ describe('Auth', () => {
     it('it should not register user without username', done => {
       let user = {
         password: 'password',
-        role: 'Consumer'
+        role:     'Consumer'
       }
       chai.request(server)
         .post('/api/auth/register')
@@ -38,7 +38,7 @@ describe('Auth', () => {
     it('it should not register user without password', done => {
       let user = {
         username: 'username',
-        role: 'Consumer'
+        role:     'Consumer'
       }
       chai.request(server)
         .post('/api/auth/register')
@@ -71,7 +71,7 @@ describe('Auth', () => {
       let user = {
         username: 'us',
         password: 'password',
-        role: 'Consumer'
+        role:     'Consumer'
       }
       chai.request(server)
         .post('/api/auth/register')
@@ -88,7 +88,7 @@ describe('Auth', () => {
       let user = {
         username: 'username',
         password: 'mar',
-        role: 'Consumer'
+        role:     'Consumer'
       }
       chai.request(server)
         .post('/api/auth/register')
@@ -105,7 +105,7 @@ describe('Auth', () => {
       let user = {
         username: 'username',
         password: 'password',
-        role: 'InvalidRole',
+        role:     'InvalidRole',
       }
       chai.request(server)
         .post('/api/auth/register')
@@ -122,7 +122,7 @@ describe('Auth', () => {
       let user = {
         username: 'username',
         password: 'password',
-        role: 'Consumer',
+        role:     'Consumer',
       }
       chai.request(server)
         .post('/api/auth/register')

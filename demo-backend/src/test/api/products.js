@@ -17,11 +17,11 @@ describe('Products', () => {
   let sandbox;
 
   let category1 = {
-    _id: '5aa981af1d5b712a51cfbdf6',
+    _id:  '5aa981af1d5b712a51cfbdf6',
     name: 'Category1'
   };
   let category2 = {
-    _id: '5aa981af1d5b712a51cfbdf7',
+    _id:  '5aa981af1d5b712a51cfbdf7',
     name: 'Category2'
   };
 
@@ -38,18 +38,18 @@ describe('Products', () => {
   beforeEach((done) => {
 
     let product1 = {
-      name: 'Product1',
+      name:     'Product1',
       category: category1._id
     };
     let product2 = {
-      name: 'Product2',
+      name:     'Product2',
       category: category2._id
     };
 
     let consumerUser = {
-      id: config.mockConsumerId,
+      id:       config.mockConsumerId,
       username: config.mockConsumerUsername,
-      role: config.consumerRole
+      role:     config.consumerRole
     }
 
     Promise.all([

@@ -28,18 +28,18 @@ describe('Categories', () => {
   beforeEach((done) => {
 
     let category1 = {
-      _id: '5aa981af1d5b712a51cfbdf6',
+      _id:  '5aa981af1d5b712a51cfbdf6',
       name: 'Category1'
     };
     let category2 = {
-      _id: '5aa981af1d5b712a51cfbdf7',
+      _id:  '5aa981af1d5b712a51cfbdf7',
       name: 'Category2'
     };
 
     let consumerUser = {
-      id: config.mockConsumerId,
+      id:       config.mockConsumerId,
       username: config.mockConsumerUsername,
-      role: config.consumerRole
+      role:     config.consumerRole
     }
 
     Promise.all([
