@@ -41,7 +41,6 @@
     "esformatter": "^0.10.0",
     "esformatter-align": "^0.2.3",
     "esformatter-quotes": "^1.1.0",
-    "esformatter-use-strict": "^3.0.0",
     "express": "^4.13.3",
     "jsonwebtoken": "^7.3.0",
     "mongoose": "^4.9.4",
