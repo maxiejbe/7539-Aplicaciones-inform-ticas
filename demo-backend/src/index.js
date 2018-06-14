@@ -19,73 +19,73 @@ app.server = http.createServer(app);
 
 // logger
 if (process.env.NODE_ENV !== 'test') {
-    app.use(morgan('dev'));
+  app.use(morgan('dev'));
 }
 
 // 3rd party middleware
 app.use(cors({
-    exposedHeaders: config.corsHeaders
+  exposedHeaders: config.corsHeaders
 }));
 
 app.use(bodyParser.urlencoded({
-    extended: true
+  extended: true
 }))
 
 app.use(bodyParser.json({
-    limit: config.bodyLimit
+  limit: config.bodyLimit
 }));
 
 app.use(passport.initialize({
-    session: false
+  session: false
 }))
 
 const jwtOptions = {
-    secretOrKey:    config.jwtSecret,
-    jwtFromRequest: ExtractJwt.fromHeader('authorization'),
+  secretOrKey:    config.jwtSecret,
+  jwtFromRequest: ExtractJwt.fromHeader('authorization'),
 }
 
 passport.serializeUser(function(user, done) {
-    done(null, user.username);
+  done(null, user.username);
 })
 
 passport.deserializeUser(function(username, done) {
-    User.findOne({
-        username: username
+  User.findOne({
+    username: username
+  })
+    .then((user) => {
+      return done(user)
     })
-        .then((user) => {
-            return done(user)
-        })
-        .catch(done)
+    .catch(done)
 })
 
 passport.use('jwt', new JwtStrategy(jwtOptions, (jwt_payload, done) => {
-    User.findOne({
-        username: jwt_payload.username
+  User.findOne({
+    username: jwt_payload.username
+  })
+    .then(user => {
+      if (user) return done(null, user)
+      else return done(null, false)
     })
-        .then(user => {
-            if (user) return done(null, user)
-            else return done(null, false)
-        })
 }))
 
 // connect to db
 initializeDb(db => {
 
-    // internal middleware
-    app.use(middleware({
-        config,
-        db
-    }));
+  // internal middleware
+  app.use(middleware({
+    config,
+    db
+  }));
 
-    // api router
-    app.use('/api', api({
-        config,
-        db
-    }));
+  // api router
+  app.use('/api', api({
+    config,
+    db
+  }));
 
-    app.server.listen(process.env.PORT || config.port);
+  app.server.listen(process.env.PORT || config.port);
 
-    console.log(`Started on port ${app.server.address().port}`);
+  console.log(`Started on port ${app.server.address().port}`);
 });
 
 export default app;

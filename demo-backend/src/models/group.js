@@ -2,20 +2,20 @@ import mongoose from 'mongoose';
 
 const GroupSchema = new mongoose.Schema({
   name: {
-    type: String,
+    type:     String,
     required: true
   },
   point: {
-    type: [Number],
+    type:  [Number],
     index: '2d'
   },
   members: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
+    ref:  'User'
   }],
   owner: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
+    type:     mongoose.Schema.Types.ObjectId,
+    ref:      'User',
     required: true
   },
 })

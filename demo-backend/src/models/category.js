@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const CategorySchema = new mongoose.Schema({
   name: {
-    type: String,
+    type:     String,
     required: true
   },
   order: {

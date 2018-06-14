@@ -5,20 +5,20 @@ import config from '../config'
 
 const UserSchema = new mongoose.Schema({
   username: {
-    type: String,
+    type:      String,
     minlength: [8, 'Username must be longer than 7 character']
   },
   password: {
-    type: String,
+    type:      String,
     minlength: [8, 'Password must be longer than 7 character']
   },
   role: {
-    type: String,
-    enum: roles,
+    type:    String,
+    enum:    roles,
     default: config.consumerRole
   },
   point: {
-    type: [Number],
+    type:  [Number],
     index: '2d'
   }
 })
@@ -26,16 +26,16 @@ const UserSchema = new mongoose.Schema({
 
 UserSchema.methods.toJSON = function() {
   return {
-    _id: this._id,
+    _id:      this._id,
     username: this.username,
-    role: this.role,
-    point: this.point
+    role:     this.role,
+    point:    this.point
 
   };
 };
 
 UserSchema.pre('save', function(next) {
-  let user = this
+  let user       = this
   let saltRounds = 5
 
   if (!user.isModified('password')) return next()
