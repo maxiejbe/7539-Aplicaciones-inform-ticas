@@ -5,6 +5,22 @@ export default ({config, db}) => resource({
 
   id: 'group',
 
+  /** For requests with an `id`, you can auto-load the entity.
+   *  Errors terminate the request, success sets `req[id] = data`.
+   */
+  load(req, id, callback) {
+    Group.findById(id).then(group => {
+      callback(null, group)
+    }).catch(err => {
+      callback(err, null)
+    })
+  },
+
+  /** GET /:id - Return a given entity */
+  read({group}, res) {
+    res.json(group);
+  },
+
   /** GET / - List all entities */
   index(req, res) {
     let getGroups = Group.find({});
@@ -23,4 +39,5 @@ export default ({config, db}) => resource({
       return res.status(500).json(err);
     })
   },
+
 });
