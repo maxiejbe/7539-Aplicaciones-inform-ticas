@@ -43,7 +43,7 @@ For initial database seeding: https://github.com/sharvit/mongoose-data-seed.
 Running all seeds:
 ```
 npm install -g mongoose-data-seed.
-md-seed run
+md-seed run --dropdb
 ```
 
 
