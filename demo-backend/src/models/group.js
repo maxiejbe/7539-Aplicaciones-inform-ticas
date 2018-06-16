@@ -57,6 +57,22 @@ GroupSchema.methods.toJSON = function() {
   };
 };
 
+const groupProducts = (products) => {
+  let finalProducts = []
+  products.reduce(function(res, value) {
+    if (!res[value.product]) {
+      res[value.product] = {
+        quantity: 0,
+        product:  value.product
+      };
+      finalProducts.push(res[value.product])
+    }
+    res[value.product].quantity += value.quantity
+    return res;
+  }, {});
+  return finalProducts;
+}
+
 GroupSchema.post('init', function(group, next) {
   User.find({
     _id: {
@@ -64,7 +80,10 @@ GroupSchema.post('init', function(group, next) {
     }
   }).then(users => {
     group.fullMembers = users;
-    //group.products = users.map(user => user.products).flatten();
+
+    let products = users.map(user => user.products).flatten();
+    group.products = groupProducts(products);
+
     next();
   }).catch(err => {
     next();
