@@ -6,30 +6,29 @@ import production from './production'
 import test from './test'
 
 const config = {
-  port: 8080,
-  bodyLimit: "100kb",
-  corsHeaders: ["Link"],
+  port:         8080,
+  bodyLimit:    '100kb',
+  corsHeaders:  ['Link'],
   consumerRole: 'Consumer',
-  providerRole: 'Provider'
+  providerRole: 'Provider',
+  searchRadius: 500,
 }
 
 
 export const setupConfig = () => {
   let exportCfg
 
-  if(process.env.NODE_ENV === 'test') {
+  if (process.env.NODE_ENV === 'test') {
     exportCfg = {
       ...config,
       ...test()
     }
-  }
-  else if(process.env.NODE_ENV === 'prod') {
+  } else if (process.env.NODE_ENV === 'prod') {
     exportCfg = {
       ...config,
       ...production()
     }
-  }
-  else {
+  } else {
     exportCfg = {
       ...config,
       ...dev()

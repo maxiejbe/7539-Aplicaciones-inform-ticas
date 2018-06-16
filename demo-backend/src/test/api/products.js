@@ -16,8 +16,14 @@ describe('Products', () => {
 
   let sandbox;
 
-  let category1 = {_id: '5aa981af1d5b712a51cfbdf6', name: 'Category1' };
-  let category2 = {_id: '5aa981af1d5b712a51cfbdf7', name: 'Category2' };
+  let category1 = {
+    _id:  '5aa981af1d5b712a51cfbdf6',
+    name: 'Category1'
+  };
+  let category2 = {
+    _id:  '5aa981af1d5b712a51cfbdf7',
+    name: 'Category2'
+  };
 
   before(function(done) {
     sandbox = sinon.createSandbox();
@@ -31,13 +37,19 @@ describe('Products', () => {
 
   beforeEach((done) => {
 
-    let product1 = {name: 'Product1', category: category1._id};
-    let product2 = {name: 'Product2', category: category2._id};
+    let product1 = {
+      name:     'Product1',
+      category: category1._id
+    };
+    let product2 = {
+      name:     'Product2',
+      category: category2._id
+    };
 
     let consumerUser = {
-      id: config.mockConsumerId,
+      id:       config.mockConsumerId,
       username: config.mockConsumerUsername,
-      role: config.consumerRole
+      role:     config.consumerRole
     }
 
     Promise.all([
@@ -66,33 +78,33 @@ describe('Products', () => {
   describe('/GET products', () => {
     it('it should return all products', done => {
       chai.request(server)
-      .get('/api/products')
-      .set('authorization', config.mockConsumerToken)
-      .end((err, res) => {
-        res.should.have.status(200)
-        res.body.should.have.length(2);
-        done()
-      })
+        .get('/api/products')
+        .set('authorization', config.mockConsumerToken)
+        .end((err, res) => {
+          res.should.have.status(200)
+          res.body.should.have.length(2);
+          done()
+        })
     })
 
     it('it should return products by category', done => {
       chai.request(server)
-      .get('/api/products?category=' + category1._id)
-      .set('authorization', config.mockConsumerToken)
-      .end((err, res) => {
-        res.should.have.status(200)
-        res.body.should.have.length(1);
-        done()
-      })
+        .get('/api/products?category=' + category1._id)
+        .set('authorization', config.mockConsumerToken)
+        .end((err, res) => {
+          res.should.have.status(200)
+          res.body.should.have.length(1);
+          done()
+        })
     })
 
     it('it should return unauthorized', done => {
       chai.request(server)
-      .get('/api/products')
-      .end((err, res) => {
-        res.should.have.status(401)
-        done()
-      })
+        .get('/api/products')
+        .end((err, res) => {
+          res.should.have.status(401)
+          done()
+        })
     })
 
   })
