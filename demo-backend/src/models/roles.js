@@ -1,6 +1,6 @@
 import config from '../config'
 const roles = [
-  config.consumerRole, 
+  config.consumerRole,
   config.providerRole
 ];
 export default roles;

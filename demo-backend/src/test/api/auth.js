@@ -21,120 +21,120 @@ describe('Auth', () => {
 
     it('it should not register user without username', done => {
       let user = {
-          password: 'password',
-          role: 'Consumer'
-        }
+        password: 'password',
+        role:     'Consumer'
+      }
       chai.request(server)
-      .post('/api/auth/register')
-      .send(user)
-      .end((err, res) => {
-        res.should.have.status(400)
-        res.body.should.have.property('message')
-        res.body.message.should.be.eql('Missing required fields')
-        done()
-      })
+        .post('/api/auth/register')
+        .send(user)
+        .end((err, res) => {
+          res.should.have.status(400)
+          res.body.should.have.property('message')
+          res.body.message.should.be.eql('Missing required fields')
+          done()
+        })
     })
 
     it('it should not register user without password', done => {
       let user = {
-          username: 'username',
-          role: 'Consumer'
-        }
+        username: 'username',
+        role:     'Consumer'
+      }
       chai.request(server)
-      .post('/api/auth/register')
-      .send(user)
-      .end((err, res) => {
-        res.should.have.status(400)
-        res.body.should.have.property('message')
-        res.body.message.should.be.eql('Missing required fields')
-        done()
-      })
+        .post('/api/auth/register')
+        .send(user)
+        .end((err, res) => {
+          res.should.have.status(400)
+          res.body.should.have.property('message')
+          res.body.message.should.be.eql('Missing required fields')
+          done()
+        })
     })
 
     it('it should not register user without role', done => {
       let user = {
-          username: 'username',
-          password: 'password'
-        }
+        username: 'username',
+        password: 'password'
+      }
       chai.request(server)
-      .post('/api/auth/register')
-      .send(user)
-      .end((err, res) => {
-        res.should.have.status(400)
-        res.body.should.have.property('message')
-        res.body.message.should.be.eql('Missing required fields')
-        done()
-      })
+        .post('/api/auth/register')
+        .send(user)
+        .end((err, res) => {
+          res.should.have.status(400)
+          res.body.should.have.property('message')
+          res.body.message.should.be.eql('Missing required fields')
+          done()
+        })
     })
 
     it('it should not register user with too short username', done => {
       let user = {
         username: 'us',
         password: 'password',
-        role: 'Consumer'
+        role:     'Consumer'
       }
       chai.request(server)
-      .post('/api/auth/register')
-      .send(user)
-      .end((err, res) => {
-        res.should.have.status(400)
-        res.body.should.have.property('message')
-        res.body.message.should.contains('Username must be longer than 7 character')
-        done()
-      })
+        .post('/api/auth/register')
+        .send(user)
+        .end((err, res) => {
+          res.should.have.status(400)
+          res.body.should.have.property('message')
+          res.body.message.should.contains('Username must be longer than 7 character')
+          done()
+        })
     })
 
     it('it should not register user with too short password', done => {
       let user = {
         username: 'username',
         password: 'mar',
-        role: 'Consumer'
+        role:     'Consumer'
       }
       chai.request(server)
-      .post('/api/auth/register')
-      .send(user)
-      .end((err, res) => {
-        res.should.have.status(400)
-        res.body.should.have.property('message')
-        res.body.message.should.contains('Password must be longer than 7 character')
-        done()
-      })
+        .post('/api/auth/register')
+        .send(user)
+        .end((err, res) => {
+          res.should.have.status(400)
+          res.body.should.have.property('message')
+          res.body.message.should.contains('Password must be longer than 7 character')
+          done()
+        })
     })
-    
+
     it('it should not register user if role is invalid', done => {
       let user = {
         username: 'username',
         password: 'password',
-        role: 'InvalidRole',
+        role:     'InvalidRole',
       }
       chai.request(server)
-      .post('/api/auth/register')
-      .send(user)
-      .end((err, res) => {
-        res.should.have.status(400)
-        res.body.should.have.property('message')
-        res.body.message.should.be.eql('Role is not valid')
-        done()
-      })
+        .post('/api/auth/register')
+        .send(user)
+        .end((err, res) => {
+          res.should.have.status(400)
+          res.body.should.have.property('message')
+          res.body.message.should.be.eql('Role is not valid')
+          done()
+        })
     })
 
     it('it should register user with supplied data', done => {
       let user = {
         username: 'username',
         password: 'password',
-        role: 'Consumer',
+        role:     'Consumer',
       }
       chai.request(server)
-      .post('/api/auth/register')
-      .send(user)
-      .end((err, res) => {
-        res.should.have.status(200)
-        res.body.username.should.be.eql(user.username);
-        res.body.role.should.be.eql(user.role);
-        done()
-      })
+        .post('/api/auth/register')
+        .send(user)
+        .end((err, res) => {
+          res.should.have.status(200)
+          res.body.username.should.be.eql(user.username);
+          res.body.role.should.be.eql(user.role);
+          done()
+        })
     })
-    
+
   })
 
   describe('/POST login', () => {
@@ -147,13 +147,13 @@ describe('Auth', () => {
       user.save()
 
       chai.request(server)
-      .post('/api/auth/login')
-      .send(userData)
-      .end((err, res) => {
-        res.should.have.status(200)
-        res.body.should.have.property('token')
-        done()
-      })
+        .post('/api/auth/login')
+        .send(userData)
+        .end((err, res) => {
+          res.should.have.status(200)
+          res.body.should.have.property('token')
+          done()
+        })
     })
 
     it('it should not login with incorrect password', done => {
@@ -170,14 +170,14 @@ describe('Auth', () => {
       user.save()
 
       chai.request(server)
-      .post('/api/auth/login')
-      .send(wrongUserData)
-      .end((err, res) => {
-        res.should.have.status(400)
-        res.body.should.have.property('message')
-        res.body.message.should.be.eql('Bad password')
-        done()
-      })
+        .post('/api/auth/login')
+        .send(wrongUserData)
+        .end((err, res) => {
+          res.should.have.status(400)
+          res.body.should.have.property('message')
+          res.body.message.should.be.eql('Bad password')
+          done()
+        })
     })
 
     it('it should not login to nonexistent account', done => {
@@ -187,14 +187,14 @@ describe('Auth', () => {
       }
 
       chai.request(server)
-      .post('/api/auth/login')
-      .send(userData)
-      .end((err, res) => {
-        res.should.have.status(400)
-        res.body.should.have.property('message')
-        res.body.message.should.be.eql('No user')
-        done()
-      })
+        .post('/api/auth/login')
+        .send(userData)
+        .end((err, res) => {
+          res.should.have.status(400)
+          res.body.should.have.property('message')
+          res.body.message.should.be.eql('No user')
+          done()
+        })
     })
 
     it('it should not login without username', done => {
@@ -203,14 +203,14 @@ describe('Auth', () => {
       }
 
       chai.request(server)
-      .post('/api/auth/login')
-      .send(userData)
-      .end((err, res) => {
-        res.should.have.status(400)
-        res.body.should.have.property('message')
-        res.body.message.should.be.eql('Missing required fields')
-        done()
-      })
+        .post('/api/auth/login')
+        .send(userData)
+        .end((err, res) => {
+          res.should.have.status(400)
+          res.body.should.have.property('message')
+          res.body.message.should.be.eql('Missing required fields')
+          done()
+        })
     })
 
 
@@ -220,14 +220,14 @@ describe('Auth', () => {
       }
 
       chai.request(server)
-      .post('/api/auth/login')
-      .send(userData)
-      .end((err, res) => {
-        res.should.have.status(400)
-        res.body.should.have.property('message')
-        res.body.message.should.be.eql('Missing required fields')
-        done()
-      })
+        .post('/api/auth/login')
+        .send(userData)
+        .end((err, res) => {
+          res.should.have.status(400)
+          res.body.should.have.property('message')
+          res.body.message.should.be.eql('Missing required fields')
+          done()
+        })
     })
   })
 })
