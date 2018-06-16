@@ -26,7 +26,8 @@ auth.post('/login', (req, res) => {
           const token = jwt.sign({
             id:       user.id,
             username: req.body.username,
-            role:     user.role
+            role:     user.role,
+            point:    user.point
           }, config.jwtSecret)
           return res.status(200).json({
             message: 'ok',
@@ -62,7 +63,8 @@ auth.post('/register', (req, res) => {
       let user = new User({
         username: req.body.username,
         password: req.body.password,
-        role:     req.body.role
+        role:     req.body.role,
+        point:    req.body.point
       })
       user.save()
         .then(() => {

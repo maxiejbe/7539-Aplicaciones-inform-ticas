@@ -4,12 +4,13 @@ import { Seeder } from 'mongoose-data-seed';
 import User from '../src/models/user';
 import Group from '../src/models/group';
 import generateRandomPoint from '../src/lib/geo';
+import config from '../src/config'
 const format = require('string-format');
 
 const data                     = []
 const FAKE_GROUPS_COUNT        = 10;
 const FAKE_GROUP_MEMBERS_COUNT = 5;
-const RANDOM_POINT_RADIUS      = 500;
+const RANDOM_POINT_RADIUS      = config.searchRadius;
 const RANDOM_POINT_CENTER      = {
   lat: -34.617529,
   lng: -58.368317

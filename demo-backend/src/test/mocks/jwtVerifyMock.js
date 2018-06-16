@@ -9,12 +9,14 @@ const jwtVerifyMock = (sandbox) => {
       id:       config.mockConsumerId,
       username: config.mockConsumerUsername,
       role:     config.consumerRole,
+      point:    [-34.617529, -58.368317]
     };
 
     const mockProvider = {
       id:       config.mockProviderId,
       username: config.mockProviderUsername,
-      role:     config.consumerRole,
+      role:     config.providerRole,
+      point:    [-34.617529, -58.368317]
     };
 
     let users = {}
