@@ -6,8 +6,8 @@ import roles from '../src/models/roles';
 import generateRandomPoint from '../src/lib/geo';
 const format = require('string-format');
 
-const FAKE_USERS_COUNT    = 100;
-const RANDOM_POINT_RADIUS = 500;
+const FAKE_USERS_COUNT    = 10;
+const RANDOM_POINT_RADIUS = 1000;
 const RANDOM_POINT_CENTER = {
   lat: -34.617529,
   lng: -58.368317
