@@ -57,7 +57,7 @@ GroupSchema.methods.toJSON = function() {
   };
 };
 
-const groupProducts = (products) => {
+export const groupProducts = (products) => {
   let finalProducts = []
   products.reduce(function(res, value) {
     if (!res[value.product]) {
