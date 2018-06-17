@@ -37,14 +37,13 @@ describe('Categories', () => {
     };
 
     let consumerUser = {
-      id:       config.mockConsumerId,
+      _id:      config.mockConsumerId,
       username: config.mockConsumerUsername,
       role:     config.consumerRole
     }
 
     Promise.all([
-      Category.create(category1),
-      Category.create(category2),
+      Category.create([category1, category2]),
       User.create(consumerUser)
     ]).then(() => {
       done()

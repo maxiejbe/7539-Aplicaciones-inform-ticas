@@ -10,7 +10,8 @@ const config = {
   bodyLimit:    '100kb',
   corsHeaders:  ['Link'],
   consumerRole: 'Consumer',
-  providerRole: 'Provider'
+  providerRole: 'Provider',
+  searchRadius: 500,
 }
 
 

@@ -2,6 +2,7 @@ import { version } from '../../package.json';
 import { Router } from 'express';
 import facets from './facets';
 import categories from './categories';
+import groups from './groups';
 import products from './products';
 import auth from './auth';
 
@@ -15,6 +16,11 @@ export default ({config, db}) => {
   }))
 
   api.use('/categories', categories({
+    config,
+    db
+  }))
+
+  api.use('/groups', groups({
     config,
     db
   }))

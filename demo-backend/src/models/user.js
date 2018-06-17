@@ -32,7 +32,7 @@ const UserSchema = new mongoose.Schema({
   },
   point: {
     type:  [Number],
-    index: '2d'
+    index: '2dsphere'
   },
   products: [UserProductSchema]
 })
