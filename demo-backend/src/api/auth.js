@@ -5,8 +5,13 @@ import User from '../models/user'
 import roles from '../models/roles'
 import passport from 'passport'
 import config from '../config'
+import isAuthenticated from '../middleware/common/isAuthenticated';
 
 const auth = Router()
+
+auth.get('/profile', isAuthenticated(), (req, res) => {
+  return res.status(200).json(req.user);
+})
 
 auth.post('/login', (req, res) => {
   if (!req.body.username || !req.body.password) {
