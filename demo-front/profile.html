@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>Compras comunitarias</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="author" />
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+    <link href="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN THEME GLOBAL STYLES -->
+    <link href="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <link href="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/pages/css/profile.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME GLOBAL STYLES -->
+    <!-- BEGIN THEME LAYOUT STYLES -->
+    <link href="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css" />
+    <link href="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/layouts/layout/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME LAYOUT STYLES -->
+    <link rel="shortcut icon" href="favicon.ico" /> </head>
+    <!-- Spanish -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--Fontawesome -->
+    <link rel="stylesheet" href="./assets/fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome-all.css">
+   
+</head>
+<!-- END HEAD -->
+
+<style type="text/css">
+
+    body {
+        background-color: white;
+    }
+
+    #map {
+        width: 550px;
+        height: 325px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .Titulo-navs {
+        font-family: 'Oswald', sans-serif;
+        font-size: 14px;
+        color: #98999D;
+    }
+
+    .white-bar-small { 
+        padding-top: 2.5rem;
+     }
+
+    .page-header.navbar {
+        background-color: white;
+    }
+
+    .nav-tabs {
+        border-bottom-width: 0px !important;
+        padding-top: 1.5rem !important;
+        padding-left: 10.5rem !important;
+        border: 0px !important;
+    }
+    
+    .nav > li > a {
+        position: relative !important;
+        display: block !important;
+        padding-top: 0.1rem !important;
+        border: 0px !important;
+    }
+
+    ul.nav > li > a:hover {
+        background-color: #FFFFFF !important;
+        color: #000000 !important;
+        border-style: none !important;
+        font-size: 16px !important;
+        border: 0px !important;
+    }
+    
+    ul.nav > li > a:focus {
+        background-color: #FFFFFF !important;
+        color: #000000 !important;
+        border-style: none !important;
+        font-size: 16px !important;
+        border: 0px !important;
+    }
+
+    .element-step {
+        font-size: 23px;
+        border-radius: 50% !important;
+        float: left;
+        margin: auto;
+        margin-top: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        padding: 3px 14px;
+        padding-top: 3px;
+        padding-right: 14px;
+        padding-bottom: 3px;
+        padding-left: 14px;
+    }
+
+    .btn.btn-outline.green {
+        border-color: #2AB4C0;
+        color: #2AB4C0;
+        background-color: #2AB4C0;
+    }
+    .btn.btn-outline.green:hover {
+        border-color: #2AB4C0;
+        color: #2AB4C0;
+        background: 0 0;
+    }
+    .btn:hover, .btn:focus, .btn.focus {
+        color: #333;
+        text-decoration: none;
+    }
+
+</style>
+
+<body>
+
+    <div class="page-header navbar navbar-fixed-top">
+        <div class="col-md-12">
+            <div class="col-md-3">
+                <div class="col-md-1"></div>
+                <a href="#"><i class="fas fa-shopping-cart fa-3x" style="padding-top: 1.5rem; color: #2AB4C0;"></i></a>
+            </div>
+            <div class="col-md-8" style="height:90px;">
+                <ul class="nav nav-tabs ">
+                    <li class="active">
+                      <a class="Titulo-navs" href="#" aria-expanded="true">
+                      PERFIL </a>
+                    </li>
+                    <li class="">
+                      <a class="Titulo-navs" href="./createOrder.html" aria-expanded="false">
+                      LISTA DE COMPRAS</a>
+                    </li>
+                    <li class="">
+                      <a class="Titulo-navs" href="./groups.html" aria-expanded="false">
+                      GRUPOS</a>
+                    </li>
+                    <li class="">
+                      <a class="Titulo-navs" href="./login.html" aria-expanded="false">
+                      CERRAR SESIÓN </a>
+                    </li>
+                  </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="white-bar-small"></div>
+    <div class="row"  style="padding-top:90px;">
+        <div class="col-md-12" style="padding-bottom:0rem; background-color:#2AB4C0;">
+            <div class="col-md-12">
+                <div style="font-family: 'Playfair Display', sans-serif;font-size: 16px; color:white;text-align: left; padding-top:3.5rem; padding-bottom:3.5rem; padding-left:8.5rem"> PERFIL </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="col-md-4">
+            <div class="portlet light profile-sidebar-portlet ">
+                <div class="profile-userpic">
+                    <img src="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/pages/media/profile/profile_user.jpg" class="img-responsive" alt=""> </div>
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name"> Juan Perez </div>
+                </div>
+                <div class="profile-usermenu">
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="javascript:mostrarDatosPersonales();">
+                                <i class="icon-home"></i> Datos personales </a>
+                        </li>
+                        <li>
+                            <a href="javascript:editarDatosPersonales();">
+                                <i class="icon-settings"></i> Editar datos </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-info"></i> Ayuda </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="portlet light profile-sidebar-portlet" id="p_datosPersonales" style="display:block;" >
+                    <div class="col-md-12" style="padding-top:2.5rem;padding-bottom:2.5rem">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10">
+                            <div class="col-md-6">
+                                <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                                    <span class="input-group-addon input-circle-left"><i class="fa fa-user"></i></span>
+                                    <input disabled="true" id="in_nombre" class="form-control input-circle-right" value="Juan Perez" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                                    <span class="input-group-addon input-circle-left"><i class="fa fa-user"></i></span>
+                                    <input disabled="true" id="in_mail" class="form-control input-circle-right" value="jperez@gmail.com" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
+                                </div>
+                            </div>
+                           <div class="col-md-8">
+                                <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                                    <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
+                                    <input disabled="true" id="in_calle" class="form-control input-circle-right" value="Balcarce" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                                    <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
+                                    <input disabled="true" id="in_nro" class="form-control input-circle-right" value="985" style="background-color:#EEEEEE" type="text"> 
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                                    <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
+                                    <input disabled="true" id="in_provincia" class="form-control input-circle-right" value="Capital Federal" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                                    <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
+                                    <input disabled="true" id="in_localidad" class="form-control input-circle-right" value="Capital Federal" style="background-color:#EEEEEE" type="text"> 
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div id="r_mapa" >
+                                    <div id="map"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portlet light profile-sidebar-portlet" id="p_editarDatos" style="display:none;">
+                    <div class="col-md-12" style="padding-top:2.5rem;padding-bottom:2.5rem">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-10">
+                                <div class="col-md-6">
+                                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                                        <span class="input-group-addon input-circle-left"><i class="fa fa-user"></i></span>
+                                        <input id="tb_nombre" class="form-control input-circle-right" value="Juan Perez" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                                        <span class="input-group-addon input-circle-left"><i class="fa fa-user"></i></span>
+                                        <input id="tb_mail" class="form-control input-circle-right" value="jperez@gmail.com" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
+                                    </div>
+                                </div>
+                               <div class="col-md-8">
+                                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                                        <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
+                                        <input id="tb_calle" class="form-control input-circle-right" value="Balcarce" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                                        <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
+                                        <input id="tb_nro" class="form-control input-circle-right" value="985" style="background-color:#EEEEEE" type="text"> 
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                                        <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
+                                        <input id="tb_provincia" class="form-control input-circle-right" value="Capital Federal" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                                        <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
+                                        <input id="tb_localidad" class="form-control input-circle-right" value="Capital Federal" style="background-color:#EEEEEE" type="text"> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                                
+                                    
+    <!--Google Maps -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhnMYzus4S7e-uYtr3aKCO2eImUtVsXu8"></script>
+    <!-- BEGIN CORE PLUGINS -->
+    <script src="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+    <script src="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+    <script src="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+    <!-- BEGIN THEME GLOBAL SCRIPTS -->
+    <script src="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/scripts/app.min.js" type="text/javascript"></script>
+    <!-- END THEME GLOBAL SCRIPTS -->
+    <!-- BEGIN THEME LAYOUT SCRIPTS -->
+    <script src="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+    <script src="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
+    <script src="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+    <script src="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
+    <!-- END THEME LAYOUT SCRIPTS -->
+    
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            inicializarMapa();
+            dibujarMapaDireccion();
+        });
+
+        var geocoder;
+        var map;
+        var address = "Balcarce 850, Ciudad de Buenos Aires, Argentina";
+
+        function inicializarMapa() {
+            var uluru = {lat: -25.363, lng: 131.044};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+
+        function dibujarMapaDireccion() {
+            var geocoder = new google.maps.Geocoder();
+            
+            geocoder.geocode({ 'address': address }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    var latitud = results[0].geometry.location.lat();
+                    var longitud = results[0].geometry.location.lng();
+                    var mapOptions = {
+                        zoom: 16,
+                        center: results[0].geometry.location,
+                        disableDefaultUI: true
+                    };
+                    map = new google.maps.Map(document.getElementById('map'), mapOptions);
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location
+                    });
+                } else {
+                    alert("No se pudo localizar la ubicación en el mapa: " + status);
+                }
+                //$("#ContentPlaceHolder1_hf_direccionGoogle").val(latitud + ',' + longitud);
+            });
+        }
+       
+        function dibujarMapaCoordenadas() {
+            var geocoder = new google.maps.Geocoder();
+
+            var latlng = { lat: -34.6206824775514, lng: -58.3714671445496 };
+            geocoder.geocode({ 'location': latlng }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    var mapOptions = {
+                        zoom: 16,
+                        center: results[0].geometry.location,
+                        disableDefaultUI: true
+                    };
+                    map = new google.maps.Map(document.getElementById('map'), mapOptions);
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location
+                    });
+                } else {
+                    alert("No se pudo localizar la ubicación en el mapa: " + status);
+                }
+            });
+        }
+
+        function localizar() {
+            var r_mapa;
+            r_mapa = document.getElementById('r_mapa');
+            r_mapa.style.display = 'block';
+            dibujarMapaCoordenadas();
+        }
+
+        function mostrarDatosPersonales() {
+            var p_datosPersonales = document.getElementById('p_datosPersonales');
+            var p_editarDatos = document.getElementById('p_editarDatos');
+            p_datosPersonales.style.display = 'block';
+            p_editarDatos.style.display = 'none';
+
+        }
+
+        function editarDatosPersonales() {
+            var p_datosPersonales = document.getElementById('p_datosPersonales');
+            var p_editarDatos = document.getElementById('p_editarDatos');
+            p_datosPersonales.style.display = 'none';
+            p_editarDatos.style.display = 'block';
+            
+        }
+
+    </script>
+
+</html>
