@@ -81,6 +81,9 @@ initializeDb(db => {
     db
   }));
 
+
+  app.use('/app', express.static('../demo-front'));
+
   app.server.listen(process.env.PORT || config.port);
 
   console.log(`Started on port ${app.server.address().port}`);
