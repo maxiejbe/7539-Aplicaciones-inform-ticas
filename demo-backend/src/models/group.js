@@ -1,5 +1,7 @@
 import mongoose from 'mongoose';
 import User from './user';
+import Product from './product';
+import Category from './category';
 
 const GroupSchema = new mongoose.Schema({
   name: {
@@ -57,20 +59,20 @@ GroupSchema.methods.toJSON = function() {
   };
 };
 
-export const groupProducts = (products) => {
-  let finalProducts = []
+export const getGroupProducts = (products) => {
+  let groupProducts = []
   products.reduce(function(res, value) {
     if (!res[value.product]) {
       res[value.product] = {
         quantity: 0,
         product:  value.product
       };
-      finalProducts.push(res[value.product])
+      groupProducts.push(res[value.product])
     }
     res[value.product].quantity += value.quantity
     return res;
   }, {});
-  return finalProducts;
+  return groupProducts;
 }
 
 GroupSchema.post('init', function(group, next) {
@@ -79,12 +81,36 @@ GroupSchema.post('init', function(group, next) {
       '$in': group.members
     }
   }).then(users => {
-    group.fullMembers = users;
 
-    let products = users.map(user => user.products).flatten();
-    group.products = groupProducts(products);
+    group.fullMembers = users.map(user => {
+      return {
+        _id:      user._id,
+        username: user.username,
+        point:    user.point
+      }
+    });
 
-    next();
+    //Group user products to create a general group list
+    let usersProducts    = users.map(user => user.products).flatten();
+    let groupProducts    = getGroupProducts(usersProducts);
+    let groupProductsIds = groupProducts.map(prod => prod.product);
+
+    return Product.find({
+      _id: {
+        '$in': groupProductsIds
+      }
+    }).populate({
+      path:  'category',
+      model: Category
+    }).then(products => {
+      group.products = groupProducts.map(groupProduct => {
+        return {
+          product:  products.find(prod => prod._id.equals(groupProduct.product)),
+          quantity: groupProduct.quantity
+        }
+      })
+      next();
+    })
   }).catch(err => {
     next();
   })

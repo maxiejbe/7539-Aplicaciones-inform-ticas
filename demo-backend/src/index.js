@@ -23,9 +23,7 @@ if (process.env.NODE_ENV !== 'test') {
 }
 
 // 3rd party middleware
-app.use(cors({
-  exposedHeaders: config.corsHeaders
-}));
+app.use(cors());
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -82,6 +80,9 @@ initializeDb(db => {
     config,
     db
   }));
+
+
+  app.use('/app', express.static('../demo-front'));
 
   app.server.listen(process.env.PORT || config.port);
 
