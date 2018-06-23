@@ -335,56 +335,65 @@
         }
 
         function cargarGrupos (data) {
-            var l_groupList, admin, members;
-            var products;
+            var l_groupList, admin, members, groupId, groupNumber;
 
             l_groupList = document.getElementById('l_groupList');
             for(i = 0; i < data.length; i++) {
-                products = [];
                 members = '';
 
+                groupNumber = i;
                 admin = data[i].fullMembers[0].username;
+                groupId = data[i]._id;
 
                 for(j = 0; j < data[i].fullMembers.length; j++) {
                     members = members + data[i].fullMembers[j].username + ' - ';
-                    products.push(data[i].fullMembers[j].products);
                 }
                 members = members.substring(0, members.length-2);
                 
                 l_groupList.innerHTML = l_groupList.innerHTML + "<li class=\"mt-list-item\"><div class=\"list-icon-container done\"><i class=\"fas fa-users\"></i></div><div class=\"list-datetime\"> <a href=\"javascript:abrirDatosGrupo('" + data[i].name + "','" + admin + "','" + members + "');\" class=\"btn btn-sm red\"> info <i class=\"fas fa-info-circle\"></i></a></div><div class=\"list-item-content\"><h3 class=\"uppercase\"><a href=\"javascript:mostrarPedidosGrupo(" + i + ");\">" + data[i].name + "</a></h3></div></li>";
-                armarTablaPedidos(products, i);
-                
+                getGroupsData(groupId, groupNumber);
             }
         }
 
-        function armarTablaPedidos(products, number) {
-            var product, productName, codigo, quantity, i, j;
+        function getGroupsData(groupId, groupNumber) {
+            var url = "http://localhost:3000/api";
+            var token = localStorage.getItem("token")
+
+            jQuery.ajax({
+                type:"get",
+                url: url + '/groups/' + groupId,
+                data: JSON.stringify({}),
+                contentType: 'application/json',
+                xhrFields: {
+                    withCredentials: true
+                },
+                headers: {
+                    'Authorization': token
+                },
+                success: function(data) {
+                    armarTablaPedidos(data, groupNumber);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert(textStatus);
+                }
+            });
+        }
+
+        function armarTablaPedidos(data , groupNumber) {
+            var products, product, productName, codigo, quantity;
             var p_tables = document.getElementById('p_tables');
             var content = "";
-            var dict_prod = {};
-            var counter = 0;
-            var productName = "Nombre del producto";
 
-            for(i = 0; i < products.length; i++) {
-                product = products[i];
-                for(j = 0; j < product.length; j++) {
-                    codigo = product[j].product;
-                    quantity = product[j].quantity;
-                    if (codigo in dict_prod) {
-                        dict_prod[codigo] = dict_prod[codigo] + quantity;
-                    }
-                    else {
-                        dict_prod[codigo] = quantity;
-                    }
-                }
-            }
+            products = data.products;
 
-            for (var key in dict_prod){
-                counter = counter + 1;
-                content = content + "<tr><td>" + counter + "</td><td> " + key + " </td><td> " + productName + " </td><td> " + dict_prod[key] + " </td></tr>";
-            }
+            for(i= 0; i < products.length; i++) {
+                    product = products[i].product;
+                    quantity = products[i].quantity;
 
-            p_tables.innerHTML = p_tables.innerHTML + "<div class=\"groupsOrder\" style=\"display:none; \" id=\"t_grupo_" + number + "\" class=\"table-responsive\"><table class=\"table table-striped table-bordered table-hover\"><thead><tr><th> # </th><th> Código Producto </th><th> Nombre </th><th> Cantidad </th></tr></thead><tbody>" + content + "</tbody></table></div>";
+                    content = content + "<tr><td>" + i + "</td><td> " + product._id + " </td><td> " + product.name + " </td><td> " + quantity + " </td></tr>";
+            }   
+
+            p_tables.innerHTML = p_tables.innerHTML + "<div class=\"groupsOrder\" style=\"display:none; \" id=\"t_grupo_" + groupNumber + "\" class=\"table-responsive\"><table class=\"table table-striped table-bordered table-hover\"><thead><tr><th> # </th><th> Código Producto </th><th> Nombre </th><th> Cantidad </th></tr></thead><tbody>" + content + "</tbody></table></div>"; 
         }
 
 
