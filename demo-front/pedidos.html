@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>Compras comunitarias</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="author" />
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+    <link href="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN THEME GLOBAL STYLES -->
+    <link href="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <link href="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/pages/css/profile.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME GLOBAL STYLES -->
+    <!-- BEGIN THEME LAYOUT STYLES -->
+    <link href="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css" />
+    <link href="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/layouts/layout/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME LAYOUT STYLES -->
+    <link rel="shortcut icon" href="favicon.ico" /> </head>
+    <!-- Spanish -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--Fontawesome -->
+    <link rel="stylesheet" href="./assets/fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome-all.css">
+   
+</head>
+<!-- END HEAD -->
+
+<style type="text/css">
+
+    body {
+        background-color: white;
+    }
+
+    #map {
+        width: 550px;
+        height: 325px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .Titulo-navs {
+        font-family: 'Oswald', sans-serif;
+        font-size: 14px;
+        color: #98999D;
+    }
+
+    .white-bar-small { 
+        padding-top: 2.5rem;
+     }
+
+    .page-header.navbar {
+        background-color: white;
+    }
+
+    .nav-tabs {
+        border-bottom-width: 0px !important;
+        padding-top: 1.5rem !important;
+        padding-left: 10.5rem !important;
+        border: 0px !important;
+    }
+    
+    .nav > li > a {
+        position: relative !important;
+        display: block !important;
+        padding-top: 0.1rem !important;
+        border: 0px !important;
+    }
+
+    ul.nav > li > a:hover {
+        background-color: #FFFFFF !important;
+        color: #000000 !important;
+        border-style: none !important;
+        font-size: 16px !important;
+        border: 0px !important;
+    }
+    
+    ul.nav > li > a:focus {
+        background-color: #FFFFFF !important;
+        color: #000000 !important;
+        border-style: none !important;
+        font-size: 16px !important;
+        border: 0px !important;
+    }
+
+    .element-step {
+        font-size: 23px;
+        border-radius: 50% !important;
+        float: left;
+        margin: auto;
+        margin-top: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        padding: 3px 14px;
+        padding-top: 3px;
+        padding-right: 14px;
+        padding-bottom: 3px;
+        padding-left: 14px;
+    }
+
+    .btn.btn-outline.green {
+        border-color: #2AB4C0;
+        color: #FFFFFF;
+        background-color: #2AB4C0;
+    }
+    .btn.btn-outline.green:hover {
+        border-color: #2AB4C0;
+        color: #2AB4C0;
+        background: 0 0;
+    }
+
+    .btn.btn-outline.pink {
+        border-color: #E7505A;
+        color: #E7505A;
+        background: 0 0;
+    }
+    .btn.btn-outline.pink:hover {
+        border-color: #E7505A;
+        color: #FFFFFF;
+        background-color: #E7505A;
+    }
+
+    .btn:hover, .btn:focus, .btn.focus {
+        color: #333;
+        text-decoration: none;
+    }
+
+    .modal-dialog{
+        overflow-y: initial !important
+    }
+    .modal-body{
+        height: 350px;
+        overflow-y: auto;
+    }
+    .modal-body2{
+        height: 50px;
+        overflow-y: auto;
+    }
+    .panel-body {
+        padding: 3px;
+    }
+
+</style>
+
+<body>
+
+    <div class="page-header navbar navbar-fixed-top">
+        <div class="col-md-12">
+            <div class="col-md-3">
+                <div class="col-md-1"></div>
+                <a href="#"><i class="fas fa-shopping-cart fa-3x" style="padding-top: 1.5rem; color: #2AB4C0;"></i></a>
+            </div>
+            <div class="col-md-8" style="height:90px;">
+                <ul class="nav nav-tabs ">
+                    <li class="">
+                      <a class="Titulo-navs" href="./profileP.html" aria-expanded="false">
+                      PERFIL </a>
+                    </li>
+                    <li class="active">
+                      <a class="Titulo-navs" href="#" aria-expanded="true">
+                      PEDIDOS</a>
+                    </li>
+                    <li class="">
+                      <a class="Titulo-navs" href="./login.html" aria-expanded="false">
+                      CERRAR SESIÓN </a>
+                    </li>
+                  </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="white-bar-small"></div>
+    <div class="row"  style="padding-top:90px;">
+        <div class="col-md-12" style="padding-bottom:0rem; background-color:#2AB4C0;">
+            <div class="col-md-12">
+                <div style="font-family: 'Playfair Display', sans-serif;font-size: 16px; color:white;text-align: left; padding-top:3.5rem; padding-bottom:3.5rem; padding-left:8.5rem"> GRUPOS </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="col-md-4">
+        <div class="white-bar-small" style="padding-bottom: 3rem;"></div>
+            <div class="portlet-body">
+                <div class="mt-element-list">
+                    <div class="mt-list-head list-simple font-white bg-red">
+                        <div class="list-head-title-container">
+                            <h3 class="list-title">Grupos cercanos</h3>
+                        </div>
+                    </div>
+                    <div class="mt-list-container list-simple">
+                        <ul id="l_groupList">
+ 
+                        </ul>
+                    </div>
+                    <div class="white-bar-small" style="padding-bottom: 1rem;"></div>
+                </div>
+            </div>
+                                        
+        </div>
+        <div class="col-md-8">
+            <div class="white-bar-small" style="padding-bottom: 3rem;"></div>
+            <div class="portlet box purple">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fas fa-bars"></i>Pedido del grupo </div>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse" data-original-title="" title=""> </a>
+                        <a href="#" class="reload" data-original-title="" title=""> </a>
+                        <a href="javascript:;" class="remove" data-original-title="" title=""> </a>
+                    </div>
+                </div>
+                <div class="portlet-body" id="p_tables">
+                    
+                </div>
+                <div class="portlet-footer" id="p_footer" style="display: none;">
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                            <input id="tb_oferta" class="form-control" placeholder="monto a ofertar" type="number"> </div>
+                        <span class="input-group-btn">
+                            <button id="btn_ofertar" class="btn btn-success" type="button" onclick="javascript:ofertar();">
+                                <i class="fas fa-dollar-sign"></i> Ofertar</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+
+        <div id="modal_grupo" class="modal fade in" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-full">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title">Información del grupo</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 300px;"><div class="scroller" style="height: 300px; overflow: hidden; width: auto;" data-always-visible="1" data-rail-visible1="1" data-initialized="1">
+                            <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Nombre</h3>
+                                    </div>
+                                    <div class="panel-body" id="g_nombre"> </div>
+                                    </div>
+                                    <div class="panel panel-info">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">Administrador</h3>
+                                        </div>
+                                        <div class="panel-body" id="g_administrador"> </div>
+                                    </div>
+                                    <div class="panel panel-info">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">Miembros</h3>
+                                        </div>
+                                        <div class="panel-body" id="g_miembros"> </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="panel panel-info">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">Ubicacion</h3>
+                                        </div>
+                                        <div class="panel-body" id="g_ubicacion"> 
+                                            <div class="col-md-8">
+                                                <div id="r_mapa" >
+                                                    <div id="map"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="slimScrollBar" style="background: rgb(187, 187, 187) none repeat scroll 0% 0%; width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 300px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(234, 234, 234) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-dismiss="modal" class="btn dark btn-outline">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>            
+
+    <div class="modal fade in" tabindex="-1" aria-hidden="true" id="modal_ofertar">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">Confirmar oferta</h4>
+                </div>
+                <div class="modal-body2"> 
+                    <div class="white-bar-small" style="padding-top: 1rem;"></div>
+                    ¿Confirmar oferta de <span id="sp_oferta"> </span> ? 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn dark btn-outline" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn green" data-dismiss="modal">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+                                    
+    <!--Google Maps -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhnMYzus4S7e-uYtr3aKCO2eImUtVsXu8"></script>
+    <!-- BEGIN CORE PLUGINS -->
+    <script src="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+    <script src="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+    <script src="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+    <!-- BEGIN THEME GLOBAL SCRIPTS -->
+    <script src="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/global/scripts/app.min.js" type="text/javascript"></script>
+    <!-- END THEME GLOBAL SCRIPTS -->
+    <!-- BEGIN THEME LAYOUT SCRIPTS -->
+    <script src="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+    <script src="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
+    <script src="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+    <script src="./assets/metronic_v5.2.1/metronic_v4.7.5/theme/assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
+    <!-- END THEME LAYOUT SCRIPTS -->
+    
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            getGroups();
+        });
+
+        function getGroups() {
+            var url = "http://localhost:3000/api";
+            var token = localStorage.getItem("token")
+
+            jQuery.ajax({
+                type:"get",
+                url: url + '/groups',
+                data: JSON.stringify({}),
+                contentType: 'application/json',
+                xhrFields: {
+                    withCredentials: true
+                },
+                headers: {
+                    'Authorization': token
+                },
+                success: function(data) {
+                    cargarGrupos(data);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert(textStatus);
+                }
+            });
+        }
+
+        function cargarGrupos (data) {
+            var l_groupList, admin, members, groupId, groupNumber;
+
+            l_groupList = document.getElementById('l_groupList');
+            for(i = 0; i < data.length; i++) {
+                members = '';
+
+                groupNumber = i;
+                admin = data[i].fullMembers[0].username;
+                groupId = data[i]._id;
+
+                for(j = 0; j < data[i].fullMembers.length; j++) {
+                    members = members + data[i].fullMembers[j].username + ' - ';
+                }
+                members = members.substring(0, members.length-2);
+                
+                l_groupList.innerHTML = l_groupList.innerHTML + "<li class=\"mt-list-item\"><div class=\"list-icon-container done\"><i class=\"fas fa-users\"></i></div><div class=\"list-datetime\"> <a href=\"javascript:abrirDatosGrupo('" + data[i].name + "','" + admin + "','" + members + "','" + data[i].point[0] + "','" + data[i].point[1] + "');\" class=\"btn btn-sm red\"> info <i class=\"fas fa-info-circle\"></i></a></div><div class=\"list-item-content\"><h3 class=\"uppercase\"><a href=\"javascript:mostrarPedidosGrupo(" + i + ");\">" + data[i].name + "</a></h3></div></li>";
+                getGroupsData(groupId, groupNumber);
+            }
+        }
+
+        function getGroupsData(groupId, groupNumber) {
+            var url = "http://localhost:3000/api";
+            var token = localStorage.getItem("token")
+
+            jQuery.ajax({
+                type:"get",
+                url: url + '/groups/' + groupId,
+                data: JSON.stringify({}),
+                contentType: 'application/json',
+                xhrFields: {
+                    withCredentials: true
+                },
+                headers: {
+                    'Authorization': token
+                },
+                success: function(data) {
+                    armarTablaPedidos(data, groupNumber);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert(textStatus);
+                }
+            });
+        }
+
+        function armarTablaPedidos(data , groupNumber) {
+            var products, product, productName, codigo, quantity;
+            var p_tables = document.getElementById('p_tables');
+            var content = "";
+
+            products = data.products;
+
+            for(i= 0; i < products.length; i++) {
+                    product = products[i].product;
+                    quantity = products[i].quantity;
+
+                    content = content + "<tr><td>" + i + "</td><td> " + product._id + " </td><td> " + product.name + " </td><td> " + quantity + " </td></tr>";
+            }   
+
+            p_tables.innerHTML = p_tables.innerHTML + "<div class=\"groupsOrder\" style=\"display:none; \" id=\"t_grupo_" + groupNumber + "\" class=\"table-responsive\"><table class=\"table table-striped table-bordered table-hover\"><thead><tr><th> # </th><th> Código Producto </th><th> Nombre </th><th> Cantidad </th></tr></thead><tbody>" + content + "</tbody></table></div>"; 
+        }
+
+
+        function abrirDatosGrupo(nombre, administrador, miembros, latitud, longitud) {
+
+            var g_nombre = document.getElementById('g_nombre');
+            var g_administrador = document.getElementById('g_administrador');
+            var g_miembros = document.getElementById('g_miembros');
+
+            g_nombre.innerHTML = nombre;
+            g_administrador.innerHTML = administrador;
+            g_miembros.innerHTML = miembros;
+            dibujarMapaCoordenadas(latitud,longitud);
+            
+            $("#modal_grupo").modal();
+        }
+
+        function mostrarPedidosGrupo(number) {
+            var tableName = 't_grupo_' + number.toString();
+            var allTables = document.getElementsByClassName('groupsOrder');
+            var t_grupo = document.getElementById(tableName);
+            var p_footer = document.getElementById('p_footer');
+    
+            for (i = 0; i < allTables.length; i++) {
+                allTables[i].style.display = 'none';
+            }
+
+            t_grupo.style.display = 'block';
+            p_footer.style.display = 'block';
+        }
+
+        function abirCrearGrupo() {
+            $("#modal_Nuevogrupo").modal();
+        }
+
+        function obtenerNombreUsuario(id) {
+            var url = "http://localhost:3000/api";
+
+            jQuery.ajax({
+                type:"get",
+                url: url + '/auth/profile',
+                data: JSON.stringify({}),
+                contentType: 'application/json',
+                xhrFields: {
+                    withCredentials: true
+                },
+                headers: {
+                    'Authorization': id
+                },
+                success: function(data) {
+                    return data.username;
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    return '';
+                }
+            });
+
+        }
+
+        var geocoder;
+        var map;
+        var address = "Balcarce 850, Ciudad de Buenos Aires, Argentina";
+
+        function inicializarMapa() {
+            var uluru = {lat: -25.363, lng: 131.044};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+
+        function dibujarMapaDireccion() {
+            var geocoder = new google.maps.Geocoder();
+            
+            geocoder.geocode({ 'address': address }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    var latitud = results[0].geometry.location.lat();
+                    var longitud = results[0].geometry.location.lng();
+                    var mapOptions = {
+                        zoom: 16,
+                        center: results[0].geometry.location,
+                        disableDefaultUI: true
+                    };
+                    map = new google.maps.Map(document.getElementById('map'), mapOptions);
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location
+                    });
+                } else {
+                    alert("No se pudo localizar la ubicación en el mapa: " + status);
+                }
+                //$("#ContentPlaceHolder1_hf_direccionGoogle").val(latitud + ',' + longitud);
+            });
+        }
+       
+        function dibujarMapaCoordenadas(lat, long) {
+            var geocoder = new google.maps.Geocoder();
+            var latitude = parseFloat(lat);
+            var longitude = parseFloat(long);
+
+            var latlng = { lat: latitude, lng: longitude};
+            geocoder.geocode({ 'location': latlng }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    var mapOptions = {
+                        zoom: 16,
+                        center: results[0].geometry.location,
+                        disableDefaultUI: true
+                    };
+                    map = new google.maps.Map(document.getElementById('map'), mapOptions);
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location
+                    });
+                } else {
+                    alert("No se pudo localizar la ubicación en el mapa: " + status);
+                }
+            });
+        }
+
+        function localizar() {
+            var r_mapa;
+            r_mapa = document.getElementById('r_mapa');
+            r_mapa.style.display = 'block';
+            dibujarMapaCoordenadas();
+        }
+
+        function ofertar() {
+            var sp_oferta = document.getElementById('sp_oferta');
+            var tb_oferta = document.getElementById('tb_oferta');
+
+            sp_oferta.innerHTML = tb_oferta.value;
+            $("#modal_ofertar").modal()
+        }
+
+
+
+    </script>
+
+</html>

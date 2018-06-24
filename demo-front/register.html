@@ -163,183 +163,320 @@
         </div>
     </div>
 
-    <div class="col-md-12" style="padding-top:2.5rem;">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <div class="element-step bg-green font-white" style="background-color:#2AB4C0 !important;">1</div><div style="font-family: 'Oswald', sans-serif;font-size: 19px;color:#5C5C5C;padding-top: 0.5rem;padding-left: 5.5rem;"> Datos Personales </div>
+    <div class="col-md-12" id="p_opcion" >
+        <div class="row"  style="padding-top:90px;"></div>
+        <div class="col-md-6">
+            <button class="btn blue btn-block btn-outline" onclick="abrirPanelRegistro('p_cliente','c')">Cliente</button>
         </div>
-        <div class="col-md-1"></div>
+        <div class="col-md-6">
+             <button class="btn red btn-block btn-outline" onclick="abrirPanelRegistro('p_proveedor','p')">Proveedor</button>
+        </div>
     </div>
 
-    <div class="col-md-12" style="padding-top:2.5rem;padding-bottom:2.5rem">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <div class="col-md-6">
-                <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
-                    <span class="input-group-addon input-circle-left"><i class="fa fa-user"></i></span>
-                    <input name="tb_nombre" id="tb_nombre" class="form-control input-circle-right" placeholder="NOMBRE *" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
-                </div>
-                <span id="rfv_nombre" style="color:Red;padding-left:3.5rem;display:none;">Completá el nombre para continuar</span>
-                <span id="rev_nombre" style="color:Red;padding-left:3.5rem;display:none;">El nombre sólo puede contener letras (sin tildes)</span>
-            </div>
-            <div class="col-md-6">
-                <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
-                    <span class="input-group-addon input-circle-left"><i class="fa fa-user"></i></span>
-                    <input name="tb_apellido" id="tb_apellido" class="form-control input-circle-right" placeholder="APELLIDO *" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
-                </div>
-                <span id="rfv_apellido" style="color:Red;padding-left:3.5rem;display:none;">Completá el apellido para continuar</span>
-                <span id="rev_apellido" style="color:Red;padding-left:3.5rem;display:none;">El apellido sólo puede contener letras (sin tildes)</span>
-            </div>
-            <div class="col-md-6">
-                <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
-                    <span class="input-group-addon input-circle-left"><i class="fa fa-user"></i></span>
-                    <select name="dd_sexo" id="dd_sexo" class="form-control input-circle-right" placeholder="SEXO *" style="background-color:#EEEEEE">
-                        <option selected="selected" value="" disabled="">Sexo *</option>
-                        <option value="0">FEMENINO</option>
-                        <option value="1">MASCULINO</option>
-                    </select>
-                </div>
-                <span id="rfv_sexo" style="color:Red;padding-left:3.5rem;display:none;">Seleccioná el sexo para continuar</span>
-            </div>
-            <div class="col-md-6">
-                <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
-                    <span class="input-group-addon input-circle-left"><i class="fa fa-calendar"></i></span>
-                    <input name="tb_fechanacimiento" id="tb_fechanacimiento" class="form-control input-circle-right" placeholder="FECHA NACIMIENTO" style="background-color:#EEEEEE" type="text">
-                </div>
-                <span id="rfv_fechanacimiento" style="color:Red;padding-left:3.5rem;display:none;">Ingresá una fecha para continuar</span>
-            </div>
-            <div class="col-md-6">
-                <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
-                    <span class="input-group-addon input-circle-left"><i class="fa fa-phone"></i></span>
-                    <input name="tb_telefono" id="tb_telefono" class="form-control input-circle-right" placeholder="TELÉFONO *" style="background-color:#EEEEEE" type="text"> 
-                </div>
-                <span id="rev_telefono" style="color:Red;padding-left:3.5rem;display:none;">El teléfono sólo puede contener números</span>
-            </div>
-            <div class="col-md-6">
-                <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
-                    <span class="input-group-addon input-circle-left"><i class="fa fa-mobile-phone"></i></span>
-                    <input name="tb_celular" id="tb_celular" class="form-control input-circle-right" placeholder="CELULAR *" style="background-color:#EEEEEE" type="text">
-                </div>
-                <span id="rfv_celular" style="color:Red;padding-left:3.5rem;display:none;">Ingresá el celular para continuar</span>
-                <span id="rev_celular" style="color:Red;padding-left:3.5rem;display:none;">El celular sólo puede contener números</span>
-            </div>
-            <div class="col-md-6">
-                <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
-                    <span class="input-group-addon input-circle-left"><i class="fa fa-envelope"></i></span>
-                    <input name="tb_email" id="tb_email" class="form-control input-circle-right" placeholder="EMAIL *" style="background-color:#EEEEEE" type="text"> 
-                </div>
-                <span id="l_error_email" style="color: red; display: none; padding-left:3.5rem;"></span>
-                <span id="rfv_email" style="color:Red;padding-left:3.5rem;display:none;">Completá el email para continuar</span>
-                <span id="rev_email" style="color:Red;padding-left:3.5rem;display:none;">Formato de email incorrecto. Por favor verificalo para continuar</span>
-            </div>
-            <div class="col-md-6">
-                <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
-                    <span class="input-group-addon input-circle-left"><i class="fa fa-envelope"></i></span>
-                    <input name="tb_email_2" id="tb_email_2" class="form-control input-circle-right" placeholder="REPETIR EMAIL *" style="background-color:#EEEEEE" type="text"> 
-                </div>
-                    <span id="l_error_email_2" style="color: red; display: none; padding-left:3.5rem;"></span>                    
-            </div>
-        </div>
-        <div class="col-md-1"></div>
-    </div>
+    <div id="p_cliente" style="display: none;">
 
-    <div class="col-md-12">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <div class="element-step bg-green font-white" style="background-color:#2AB4C0 !important;">2</div><div style="font-family: 'Oswald', sans-serif;font-size: 19px;color:#5C5C5C;padding-top: 0.5rem;padding-left: 5.5rem;"> Domicilio </div>
+        <div class="col-md-12" style="padding-top:2.5rem;">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="element-step bg-green font-white" style="background-color:#2AB4C0 !important;">1</div><div style="font-family: 'Oswald', sans-serif;font-size: 19px;color:#5C5C5C;padding-top: 0.5rem;padding-left: 5.5rem;"> Datos Personales </div>
+            </div>
+            <div class="col-md-1"></div>
         </div>
-        <div class="col-md-1"></div>
-    </div>
 
-    <div class="col-md-12" style="padding-top:2.5rem;padding-bottom:2.5rem">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <div class="col-md-8">
-                <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
-                    <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
-                    <input name="tb_calle" id="tb_calle" class="form-control input-circle-right" placeholder="CALLE *" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
-                </div>
-                <span id="RequiredFieldValidator2" style="color:Red;padding-left:3.5rem;display:none;">Completa domicilio para continuar</span>
-            </div>
-            <div class="col-md-4">
-                <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
-                    <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
-                    <input name="tb_nro" id="tb_nro" class="form-control input-circle-right" placeholder="NÚMERO *" style="background-color:#EEEEEE" type="text"> 
-                </div>
-                <span id="RequiredFieldValidator1" style="color:Red;padding-left:3.5rem;display:none;">Completa domicilio para continuar</span>
-                <span id="rev_nro" style="color:Red;padding-left:3.5rem;display:none;">El número de calle sólo debe contener números</span>
-            </div>
-            <div class="col-md-4">
-                <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
-                    <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
-                    <input name="tb_piso" id="tb_piso" class="form-control input-circle-right" placeholder="PISO " style="background-color:#EEEEEE" type="text"> 
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
-                    <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
-                    <input name="tb_departemento" id="tb_departemento" class="form-control input-circle-right" placeholder="DEPARTAMENTO " style="background-color:#EEEEEE" type="text">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
-                    <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
-                    <select name="dd_provincia" id="dd_provincia" class="form-control input-circle-right" style="background-color:#EEEEEE" onchange="seleccionProvincia(this)">
-                        <option value="">PROVINCIA *</option>
-                        <option value="1">CAPITAL FEDERAL</option>
-                        <option value="2">BUENOS AIRES</option>
-                        <option value="3">CATAMARCA</option>
-                        <option value="4">CORDOBA</option>
-                        <option value="5">CORRIENTES</option>
-                        <option value="6">CHACO</option>
-                        <option value="7">CHUBUT</option>
-                        <option value="8">ENTRE RIOS</option>
-                        <option value="9">FORMOSA</option>
-                        <option value="10">JUJUY</option>
-                        <option value="11">LA PAMPA</option>
-                        <option value="12">LA RIOJA</option>
-                        <option value="13">MENDOZA</option>
-                        <option value="14">MISIONES</option>
-                        <option value="15">NEUQUEN</option>
-                        <option value="16">RIO NEGRO</option>
-                        <option value="17">SALTA</option>
-                        <option value="18">SAN JUAN</option>
-                        <option value="19">SAN LUIS</option>
-                        <option value="20">SANTA CRUZ</option>
-                        <option value="21">SANTA FE</option>
-                        <option value="22">SANTIAGO DEL ESTERO</option>
-                        <option value="23">TIERRA DEL FUEGO</option>
-                        <option value="24">TUCUMAN</option></select>
-                </div>
-                <span id="rfv_provincia" style="color:Red;padding-left:3.5rem;display:none;">Completa una provincia para continuar</span>
-            </div>
-            <div class="col-md-4">
-                <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
-                    <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
-                    <select disabled="" name="dd_partido" id="dd_partido" class="form-control input-circle-right" style="background-color:#EEEEEE" onchange="seleccionPartido()">
-                        <option value="">PARTIDO *</option>
-                      </select>
-                </div>
-                <span id="rfv_partido" style="color:Red;padding-left:3.5rem;display:none;">Completa un partido para continuar</span>
-            </div>
-            <div class="col-md-4">
-                <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
-                    <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
-                    <select disabled="" name="dd_localidad" id="dd_localidad" class="form-control input-circle-right" style="background-color:#EEEEEE" onchange="seleccionLocalidad()">
-                        <option value="">LOCALIDAD *</option>
-                    </select>
-                </div>
-                    <span id="rfv_localidad" style="color:Red;padding-left:3.5rem;display:none;">Completa una localidad para continuar</span>
-            </div>
-            <div class="col-md-4">
-                <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
-                    <div class="col-md-3"></div>
-                    <div class="control-label col-md-6">
-                        <a class="btn btn-icon-only red" href="javascript:localizar()">
-                            <i class="fas fa-map-marker-alt"></i>
-                         </a>
+        <div class="col-md-12" style="padding-top:2.5rem;padding-bottom:2.5rem">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="col-md-6">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-user"></i></span>
+                        <input name="tb_nombre" id="tb_nombre" class="form-control input-circle-right" placeholder="NOMBRE *" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
                     </div>
-                    <div class="col-md-3"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-user"></i></span>
+                        <input name="tb_apellido" id="tb_apellido" class="form-control input-circle-right" placeholder="APELLIDO *" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-user"></i></span>
+                        <select name="dd_sexo" id="dd_sexo" class="form-control input-circle-right" placeholder="SEXO *" style="background-color:#EEEEEE">
+                            <option selected="selected" value="" disabled="">Sexo *</option>
+                            <option value="0">FEMENINO</option>
+                            <option value="1">MASCULINO</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-calendar"></i></span>
+                        <input name="tb_fechanacimiento" id="tb_fechanacimiento" class="form-control input-circle-right" placeholder="FECHA NACIMIENTO" style="background-color:#EEEEEE" type="text">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-phone"></i></span>
+                        <input name="tb_telefono" id="tb_telefono" class="form-control input-circle-right" placeholder="TELÉFONO *" style="background-color:#EEEEEE" type="text"> 
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-mobile-phone"></i></span>
+                        <input name="tb_celular" id="tb_celular" class="form-control input-circle-right" placeholder="CELULAR *" style="background-color:#EEEEEE" type="text">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-envelope"></i></span>
+                        <input name="tb_email" id="tb_email" class="form-control input-circle-right" placeholder="EMAIL *" style="background-color:#EEEEEE" type="text"> 
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-envelope"></i></span>
+                        <input name="tb_email_2" id="tb_email_2" class="form-control input-circle-right" placeholder="REPETIR EMAIL *" style="background-color:#EEEEEE" type="text"> 
+                    </div>             
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="element-step bg-green font-white" style="background-color:#2AB4C0 !important;">2</div><div style="font-family: 'Oswald', sans-serif;font-size: 19px;color:#5C5C5C;padding-top: 0.5rem;padding-left: 5.5rem;"> Domicilio </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+
+        <div class="col-md-12" style="padding-top:2.5rem;padding-bottom:2.5rem">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="col-md-8">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
+                        <input name="tb_calle" id="tb_calle" class="form-control input-circle-right" placeholder="CALLE *" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
+                        <input name="tb_nro" id="tb_nro" class="form-control input-circle-right" placeholder="NÚMERO *" style="background-color:#EEEEEE" type="text"> 
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
+                        <input name="tb_piso" id="tb_piso" class="form-control input-circle-right" placeholder="PISO " style="background-color:#EEEEEE" type="text"> 
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
+                        <input name="tb_departemento" id="tb_departemento" class="form-control input-circle-right" placeholder="DEPARTAMENTO " style="background-color:#EEEEEE" type="text">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
+                        <select name="dd_provincia" id="dd_provincia" class="form-control input-circle-right" style="background-color:#EEEEEE" onchange="seleccionProvincia(this)">
+                            <option value="">PROVINCIA *</option>
+                            <option value="CAPITAL FEDERAL">CAPITAL FEDERAL</option>
+                            <option value="BUENOS AIRES">BUENOS AIRES</option>
+                            <option value="CATAMARCA">CATAMARCA</option>
+                            <option value="CORDOBA">CORDOBA</option>
+                            <option value="CORRIENTES">CORRIENTES</option>
+                            <option value="CHACO">CHACO</option>
+                            <option value="CHUBUT">CHUBUT</option>
+                            <option value="ENTRE RIOS">ENTRE RIOS</option>
+                            <option value="FORMOSA">FORMOSA</option>
+                            <option value="JUJUY">JUJUY</option>
+                            <option value="LA PAMPA">LA PAMPA</option>
+                            <option value="LA RIOJA">LA RIOJA</option>
+                            <option value="MENDOZA">MENDOZA</option>
+                            <option value="MISIONES">MISIONES</option>
+                            <option value="NEUQUEN">NEUQUEN</option>
+                            <option value="RIO NEGRO">RIO NEGRO</option>
+                            <option value="SALTA">SALTA</option>
+                            <option value="SAN JUAN">SAN JUAN</option>
+                            <option value="SAN LUIS">SAN LUIS</option>
+                            <option value="SANTA CRUZ">SANTA CRUZ</option>
+                            <option value="SANTA FE">SANTA FE</option>
+                            <option value="SANTIAGO DEL ESTERO">SANTIAGO DEL ESTERO</option>
+                            <option value="TIERRA DEL FUEGO">TIERRA DEL FUEGO</option>
+                            <option value="TUCUMAN">TUCUMAN</option></select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
+                        <select disabled="" name="dd_partido" id="dd_partido" class="form-control input-circle-right" style="background-color:#EEEEEE" onchange="seleccionPartido()">
+                            <option value="">PARTIDO *</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
+                        <select disabled="" name="dd_localidad" id="dd_localidad" class="form-control input-circle-right" style="background-color:#EEEEEE" onchange="seleccionLocalidad()">
+                            <option value="">LOCALIDAD *</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <div class="col-md-3"></div>
+                        <div class="control-label col-md-6">
+                            <a class="btn btn-icon-only red" href="javascript:localizar()">
+                                <i class="fas fa-map-marker-alt"></i>
+                             </a>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="p_proveedor" style="display: none;">
+        <div class="col-md-12" style="padding-top:2.5rem;">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="element-step bg-green font-white" style="background-color:#2AB4C0 !important;">1</div><div style="font-family: 'Oswald', sans-serif;font-size: 19px;color:#5C5C5C;padding-top: 0.5rem;padding-left: 5.5rem;"> Datos Personales </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+
+        <div class="col-md-12" style="padding-top:2.5rem;padding-bottom:2.5rem">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="col-md-12">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-user"></i></span>
+                        <input name="tb_nombreP" id="tb_nombre" class="form-control input-circle-right" placeholder="RAZON SOCIAL *" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-phone"></i></span>
+                        <input name="tb_telefonoP" id="tb_telefono" class="form-control input-circle-right" placeholder="TELÉFONO *" style="background-color:#EEEEEE" type="text"> 
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-mobile-phone"></i></span>
+                        <input name="tb_celularP" id="tb_celular" class="form-control input-circle-right" placeholder="CELULAR *" style="background-color:#EEEEEE" type="text">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-envelope"></i></span>
+                        <input name="tb_emailP" id="tb_email" class="form-control input-circle-right" placeholder="EMAIL *" style="background-color:#EEEEEE" type="text"> 
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-envelope"></i></span>
+                        <input name="tb_emailP_2" id="tb_email_2" class="form-control input-circle-right" placeholder="REPETIR EMAIL *" style="background-color:#EEEEEE" type="text"> 
+                    </div>                   
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="element-step bg-green font-white" style="background-color:#2AB4C0 !important;">2</div><div style="font-family: 'Oswald', sans-serif;font-size: 19px;color:#5C5C5C;padding-top: 0.5rem;padding-left: 5.5rem;"> Domicilio </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+
+        <div class="col-md-12" style="padding-top:2.5rem;padding-bottom:2.5rem">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="col-md-8">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
+                        <input name="tb_calleP" id="tb_calle" class="form-control input-circle-right" placeholder="CALLE *" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
+                        <input name="tb_nroP" id="tb_nro" class="form-control input-circle-right" placeholder="NÚMERO *" style="background-color:#EEEEEE" type="text"> 
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
+                        <input name="tb_pisoP" id="tb_piso" class="form-control input-circle-right" placeholder="PISO " style="background-color:#EEEEEE" type="text"> 
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
+                        <input name="tb_departementoP" id="tb_departemento" class="form-control input-circle-right" placeholder="DEPARTAMENTO " style="background-color:#EEEEEE" type="text">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
+                        <select name="dd_provinciaP" id="dd_provincia" class="form-control input-circle-right" style="background-color:#EEEEEE" onchange="seleccionProvincia(this)">
+                            <option value="">PROVINCIA *</option>
+                            <option value="CAPITAL FEDERAL">CAPITAL FEDERAL</option>
+                            <option value="BUENOS AIRES">BUENOS AIRES</option>
+                            <option value="CATAMARCA">CATAMARCA</option>
+                            <option value="CORDOBA">CORDOBA</option>
+                            <option value="CORRIENTES">CORRIENTES</option>
+                            <option value="CHACO">CHACO</option>
+                            <option value="CHUBUT">CHUBUT</option>
+                            <option value="ENTRE RIOS">ENTRE RIOS</option>
+                            <option value="FORMOSA">FORMOSA</option>
+                            <option value="JUJUY">JUJUY</option>
+                            <option value="LA PAMPA">LA PAMPA</option>
+                            <option value="LA RIOJA">LA RIOJA</option>
+                            <option value="MENDOZA">MENDOZA</option>
+                            <option value="MISIONES">MISIONES</option>
+                            <option value="NEUQUEN">NEUQUEN</option>
+                            <option value="RIO NEGRO">RIO NEGRO</option>
+                            <option value="SALTA">SALTA</option>
+                            <option value="SAN JUAN">SAN JUAN</option>
+                            <option value="SAN LUIS">SAN LUIS</option>
+                            <option value="SANTA CRUZ">SANTA CRUZ</option>
+                            <option value="SANTA FE">SANTA FE</option>
+                            <option value="SANTIAGO DEL ESTERO">SANTIAGO DEL ESTERO</option>
+                            <option value="TIERRA DEL FUEGO">TIERRA DEL FUEGO</option>
+                            <option value="TUCUMAN">TUCUMAN</option></select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
+                        <select disabled="" name="dd_partidoP" id="dd_partido" class="form-control input-circle-right" style="background-color:#EEEEEE" onchange="seleccionPartido()">
+                            <option value="">PARTIDO *</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
+                        <select disabled="" name="dd_localidadP" id="dd_localidad" class="form-control input-circle-right" style="background-color:#EEEEEE" onchange="seleccionLocalidad()">
+                            <option value="">LOCALIDAD *</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+                        <div class="col-md-3"></div>
+                        <div class="control-label col-md-6">
+                            <a class="btn btn-icon-only red" href="javascript:localizar()">
+                                <i class="fas fa-map-marker-alt"></i>
+                             </a>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -355,11 +492,11 @@
         <div class="col-md-2"></div>
     </div>
 
-    <div class="col-md-12">
+    <div class="col-md-12" id="p_confirmar" style="display:none;">
         <div class="col-md-1"></div>
         <div class="col-md-10">
             <div class="col-md-6">
-                <button type="button" class="btn green btn-outline btn-lg" onclick="return validarConBloqueo('datosPersonales', validarDatosPersonales, true);">CONFIRMAR</button>        
+                <button type="button" class="btn green btn-outline btn-lg" onclick="return confirmar();">CONFIRMAR</button>        
             </div>
         </div>
         <div class="col-md-1"></div>
@@ -394,7 +531,9 @@
 
         var geocoder;
         var map;
-        var address = "Balcarce 50, Ciudad de Buenos Aires, Argentina";
+        var tipoRegistro;
+        var lat;
+        var long;
 
         function inicializarMapa() {
             var uluru = {lat: -25.363, lng: 131.044};
@@ -410,7 +549,24 @@
 
         function dibujarMapaDireccion() {
             var geocoder = new google.maps.Geocoder();
+            var calle, numero, provincia;
+            var tb_calle, tb_nro, dd_provincia
+
+            if (tipoRegistro == 'c') {
+                tb_calle = document.getElementById('tb_calle');
+                tb_nro = document.getElementById('tb_nro');
+                dd_provincia = document.getElementById("dd_provincia");
+            } else {
+                tb_calle = document.getElementById('tb_calleP');
+                tb_nro = document.getElementById('tb_nroP');
+                dd_provincia = document.getElementById("dd_provinciaP");
+            }
+
+            calle = tb_calle.value;
+            numero = tb_nro.value;
+            provincia = dd_provincia.options[dd_provincia.selectedIndex].value;
             
+            address = calle + numero + ', ' + provincia;
             geocoder.geocode({ 'address': address }, function (results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
                     var latitud = results[0].geometry.location.lat();
@@ -428,7 +584,8 @@
                 } else {
                     alert("No se pudo localizar la ubicación en el mapa: " + status);
                 }
-                //$("#ContentPlaceHolder1_hf_direccionGoogle").val(latitud + ',' + longitud);
+                lat = latitud
+                long = longitud
             });
         }
        
@@ -459,7 +616,7 @@
             var r_mapa;
             r_mapa = document.getElementById('r_mapa');
             r_mapa.style.display = 'block';
-            dibujarMapaCoordenadas();
+            dibujarMapaDireccion();
         }
 
         function seleccionProvincia(control) {
@@ -468,6 +625,49 @@
 
             dd_partido = document.getElementById('dd_partido');
             dd_partido.disabled = false;
+        }
+
+        function abrirPanelRegistro(panel, tipo) {
+            var panelRegistro = document.getElementById(panel);
+            var p_opcion = document.getElementById('p_opcion');
+            var p_confirmar = document.getElementById('p_confirmar');
+
+            tipoRegistro = tipo;
+
+            p_opcion.style.display = 'none';
+            panelRegistro.style.display = 'block';
+            p_confirmar.style.display = 'block';
+        }
+
+        function confirmar() {
+            var tb_email;
+            var email, role;
+
+            if (tipoRegistro == 'c') {
+                tb_email = document.getElementById('tb_email');
+                role = 'Consumer';
+            } else {
+                tb_email = document.getElementById('tb_emailP');
+                role = 'Provider'
+            }
+
+            email = tb_email.value;
+
+            var url = "http://localhost:3000/api";
+            jQuery.ajax({
+                type:"get",
+                url: url + '/auth/register',
+                data: JSON.stringify({username: email, role: role, password: 'password'}),
+                contentType: 'application/json',
+                success: function(data) {
+                    alert('Usuario creado satisfactoriamente');
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert(textStatus);
+                }
+            });
+
+
         }
 
     </script>

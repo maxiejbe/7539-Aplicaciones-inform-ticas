@@ -142,7 +142,7 @@
                       PERFIL </a>
                     </li>
                     <li class="">
-                      <a class="Titulo-navs" href="#" aria-expanded="false">
+                      <a class="Titulo-navs" href="./pedidos.html" aria-expanded="false">
                       PEDIDOS</a>
                     </li>
                     <li class="">
@@ -197,19 +197,19 @@
                             <div class="col-md-6">
                                 <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
                                     <span class="input-group-addon input-circle-left"><i class="fa fa-user"></i></span>
-                                    <input disabled="true" id="in_nombre" class="form-control input-circle-right" value="Juan Perez" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
+                                    <input disabled="true" id="in_nombre" class="form-control input-circle-right" value="Proveedor Test" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
                                     <span class="input-group-addon input-circle-left"><i class="fa fa-user"></i></span>
-                                    <input disabled="true" id="in_mail" class="form-control input-circle-right" value="jperez@gmail.com" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
+                                    <input disabled="true" id="in_mail" class="form-control input-circle-right" value="testproveedores@gmail.com" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
                                 </div>
                             </div>
                            <div class="col-md-8">
                                 <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
                                     <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
-                                    <input disabled="true" id="in_calle" class="form-control input-circle-right" value="Balcarce" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
+                                    <input disabled="true" id="in_calle" class="form-control input-circle-right" value="Zepita" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -245,25 +245,25 @@
                                 <div class="col-md-6">
                                     <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
                                         <span class="input-group-addon input-circle-left"><i class="fa fa-user"></i></span>
-                                        <input id="tb_nombre" class="form-control input-circle-right" value="Juan Perez" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
+                                        <input id="tb_nombre" class="form-control input-circle-right" value="Proveedor Test" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
                                         <span class="input-group-addon input-circle-left"><i class="fa fa-user"></i></span>
-                                        <input id="tb_mail" class="form-control input-circle-right" value="jperez@gmail.com" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
+                                        <input id="tb_mail" class="form-control input-circle-right" value="testproveedores@gmail.com" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
                                     </div>
                                 </div>
                                <div class="col-md-8">
                                     <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
                                         <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
-                                        <input id="tb_calle" class="form-control input-circle-right" value="Balcarce" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
+                                        <input id="tb_calle" class="form-control input-circle-right" value="Zepita" style="background-color:#EEEEEE;text-transform:uppercase" type="text"> 
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="input-group" style="padding-top:1.5rem;padding-bottom:1.5rem;">
                                         <span class="input-group-addon input-circle-left"><i class="fa fa-home"></i></span>
-                                        <input id="tb_nro" class="form-control input-circle-right" value="985" style="background-color:#EEEEEE" type="text"> 
+                                        <input id="tb_nro" class="form-control input-circle-right" value="983" style="background-color:#EEEEEE" type="text"> 
                                     </div>
                                 </div>
                                 <div class="col-md-8">
@@ -310,13 +310,12 @@
 
     <script type="text/javascript">
         jQuery(document).ready(function () {
-            inicializarMapa();
             dibujarMapaDireccion();
         });
 
         var geocoder;
         var map;
-        var address = "Balcarce 850, Ciudad de Buenos Aires, Argentina";
+        var address = "Zepita 983, Ciudad de Buenos Aires, Argentina";
 
         function inicializarMapa() {
             var uluru = {lat: -25.363, lng: 131.044};
