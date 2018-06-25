@@ -62,5 +62,5 @@ Demo is running on http://localhost:3000/app/login.html.
 You can both login as consumer or provider role.
 
 Users are generated with random role:
-* Email: __userN@gmail.com__ (where N goes from 1 to 100)
+* Email: __userN@gmail.com__ (where N goes from 0 to 9)
 * Password: __password__
