@@ -1,0 +1,20 @@
+{
+  "indent": {
+    "value": "  "
+  },
+  "plugins": [
+    "esformatter-quotes",
+    "esformatter-align"
+  ],
+  "quotes": {
+    "type": "single",
+    "avoidEscape": false
+  },
+  "align": {
+    "ObjectExpression": 1,
+    "VariableDeclaration": 1,
+    "AssignmentExpression": 1,
+    "TernaryExpression": 1,
+    "OrExpression": 1
+  }
+}
