@@ -52,6 +52,7 @@ npm run test
 ```
 ## Running
 ```sh
+cd demo-backend
 # Start development live-reload server
 npm run dev
 ```
